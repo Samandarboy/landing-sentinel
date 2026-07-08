@@ -1,0 +1,77 @@
+<svg width="340" height="425" viewBox="0 0 340 425" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- "Others guess. Sentinel proves." — a contract where findings are checked
+     against the exact words: green = proven rows, grey ? = someone's guess,
+     center capsule carries the proof with its clause citation. -->
+<rect width="340" height="425" rx="12.5" fill="#EEEDEA"/>
+<g filter="url(#wv_ii)">
+<rect x="41.6" y="32.44" width="257.4" height="363.53" rx="10.06" fill="#EEEDEA"/>
+</g>
+<rect x="41.66" y="32.49" width="257.28" height="363.41" rx="10.01" stroke="url(#wv_g1)" stroke-width="0.115"/>
+<!-- top rows -->
+<g filter="url(#wv_ii)"><rect x="75" y="57.2" width="190.75" height="13.71" rx="6.86" fill="#EEEDEA"/></g>
+<rect x="75.06" y="57.26" width="190.64" height="13.6" rx="6.8" stroke="url(#wv_g2)" stroke-width="0.117"/>
+<g filter="url(#wv_dot)"><circle cx="82" cy="63.65" r="7" fill="#66A721"/></g>
+<path d="M79.4 63.7l1.9 1.9 3.4-3.6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<g filter="url(#wv_ii)"><rect x="75" y="82.76" width="190.75" height="13.71" rx="6.86" fill="#EEEDEA"/></g>
+<rect x="75.06" y="82.82" width="190.64" height="13.6" rx="6.8" stroke="url(#wv_g2)" stroke-width="0.117"/>
+<g filter="url(#wv_ii)"><rect x="75" y="107.07" width="190.75" height="13.71" rx="6.86" fill="#EEEDEA"/></g>
+<rect x="75.06" y="107.13" width="190.64" height="13.6" rx="6.8" stroke="url(#wv_g2)" stroke-width="0.117"/>
+<g filter="url(#wv_dot)"><circle cx="131" cy="113.65" r="7" fill="#C9C5BE"/></g>
+<text x="131" y="117.4" text-anchor="middle" font-family="ui-sans-serif, system-ui, 'Segoe UI', sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">?</text>
+<text x="146" y="117.6" font-family="ui-sans-serif, system-ui, 'Segoe UI', sans-serif" font-size="9.5" font-weight="600" fill="#B4B0A9" letter-spacing="0.04em">GUESS</text>
+<!-- proof capsule -->
+<g filter="url(#wv_dd)"><rect x="66.75" y="186.65" width="204" height="48" rx="24" fill="#F8F8F6"/></g>
+<rect x="69.42" y="189.31" width="198.67" height="44" rx="22" fill="#EEEDEA"/>
+<text x="94" y="216.5" font-family="ui-sans-serif, system-ui, 'Segoe UI', sans-serif" font-size="14.5" font-weight="600" fill="#A0A0A0">Proven &#183; &#167; 7.2</text>
+<g filter="url(#wv_dot2)"><circle cx="245.83" cy="211.48" r="15.69" fill="#66A721"/></g>
+<path d="M244.39 215.19l8.63-9.42 1.33 1.45-9.96 10.86-5.97-6.52 1.33-1.45 4.64 5.08z" fill="#fff"/>
+<!-- bottom rows -->
+<g filter="url(#wv_ii)"><rect x="76.25" y="306.55" width="190.75" height="13.71" rx="6.86" fill="#EEEDEA"/></g>
+<rect x="76.31" y="306.61" width="190.64" height="13.6" rx="6.8" stroke="url(#wv_g2)" stroke-width="0.117"/>
+<g filter="url(#wv_dot)"><circle cx="200" cy="313.65" r="7" fill="#66A721"/></g>
+<path d="M197.4 313.7l1.9 1.9 3.4-3.6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<g filter="url(#wv_ii)"><rect x="76.25" y="331.49" width="190.75" height="13.71" rx="6.86" fill="#EEEDEA"/></g>
+<rect x="76.31" y="331.55" width="190.64" height="13.6" rx="6.8" stroke="url(#wv_g2)" stroke-width="0.117"/>
+<g filter="url(#wv_ii)"><rect x="76.25" y="356.42" width="190.75" height="13.71" rx="6.86" fill="#EEEDEA"/></g>
+<rect x="76.31" y="356.48" width="190.64" height="13.6" rx="6.8" stroke="url(#wv_g2)" stroke-width="0.117"/>
+<defs>
+<filter id="wv_ii" x="-8%" y="-40%" width="118%" height="190%" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="2.81" dy="2.81"/><feGaussianBlur stdDeviation="3.51"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.894118 0 0 0 0 0.878431 0 0 0 0 0.870588 0 0 0 0.8 0"/>
+<feBlend mode="multiply" in2="SourceGraphic" result="e1"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha2"/>
+<feOffset dx="-2.81" dy="-2.81"/><feGaussianBlur stdDeviation="4.21"/>
+<feComposite in2="hardAlpha2" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.8 0"/>
+<feBlend mode="normal" in2="e1"/>
+</filter>
+<filter id="wv_dd" x="-25%" y="-90%" width="155%" height="290%" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="a"/>
+<feOffset in="a" dx="7.87" dy="7.87"/><feGaussianBlur stdDeviation="7.87" result="b1"/>
+<feColorMatrix in="b1" type="matrix" values="0 0 0 0 0.839216 0 0 0 0 0.835294 0 0 0 0 0.827451 0 0 0 1 0" result="s1"/>
+<feOffset in="a" dx="-5.25" dy="-5.25"/><feGaussianBlur stdDeviation="7.87" result="b2"/>
+<feColorMatrix in="b2" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0" result="s2"/>
+<feMerge><feMergeNode in="s1"/><feMergeNode in="s2"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="wv_dot" x="-40%" y="-40%" width="180%" height="180%" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="a"/>
+<feOffset in="a" dx="0.93" dy="0.93"/><feGaussianBlur stdDeviation="0.93" result="b1"/>
+<feColorMatrix in="b1" type="matrix" values="0 0 0 0 0.894118 0 0 0 0 0.878431 0 0 0 0 0.870588 0 0 0 0.4 0" result="s1"/>
+<feMerge><feMergeNode in="s1"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="wv_dot2" x="-30%" y="-30%" width="160%" height="160%" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="a"/>
+<feOffset in="a" dx="1.26" dy="1.26"/><feGaussianBlur stdDeviation="1.26" result="b1"/>
+<feColorMatrix in="b1" type="matrix" values="0 0 0 0 0.894118 0 0 0 0 0.878431 0 0 0 0 0.870588 0 0 0 0.35 0" result="s1"/>
+<feMerge><feMergeNode in="s1"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<linearGradient id="wv_g1" x1="53.46" y1="67.06" x2="291.21" y2="70.74" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D6D5D3"/><stop offset="0.09" stop-color="#D6D5D3"/><stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="wv_g2" x1="83.79" y1="58.51" x2="245.08" y2="107.59" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D6D5D3"/><stop offset="0.09" stop-color="#D6D5D3"/><stop offset="1" stop-color="white"/>
+</linearGradient>
+</defs>
+</svg>

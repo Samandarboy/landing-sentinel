@@ -1,0 +1,235 @@
+/* ============================================================
+   Sentinel landing — motion layer
+   Scroll reveals, hover states, and micro-interactions.
+   Elements are tagged by /animate.js (.rv + semantic anim-*
+   classes), so these selectors stay clean of Tailwind escapes.
+   Everything collapses to static under prefers-reduced-motion.
+============================================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+
+  /* ---------- scroll reveal ---------- */
+  /* pronounced rise + expo-out ease: elements visibly enter as you scroll */
+  .rv {
+    opacity: 0;
+    transform: translateY(36px);
+    transition:
+      opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--rvd, 0s);
+    will-change: opacity, transform;
+  }
+  .rv.rv-in { opacity: 1; transform: none; }
+  /* once revealed, hand transform back to the hover transitions */
+  .rv.rv-done {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition-delay: 0s;
+    will-change: auto;
+  }
+
+  /* variants */
+  .rv-left  { transform: translateX(-38px); }
+  .rv-right { transform: translateX(38px); }
+  .rv-scale { transform: scale(0.92) translateY(20px); }
+  .rv-left.rv-in, .rv-right.rv-in, .rv-scale.rv-in { transform: none; }
+
+  /* ---------- hover micro-interactions ---------- */
+  /* why-cards: gentle image zoom + lift */
+  .anim-card .overflow-hidden { overflow: hidden; }
+  .anim-card img { transition: transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1); }
+  .anim-card:hover img { transform: scale(1.045); }
+
+  /* pricing tiers: lift + deepen shadow */
+  .anim-tier { transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.35s ease; }
+  .anim-tier:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px -18px rgba(58, 72, 199, 0.28), inset 0 1px 1px rgba(255, 255, 255, 0.6) !important;
+  }
+
+  /* versus cards */
+  #versus .vs-side { transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.35s ease; }
+  #versus .vs-side:hover { transform: translateY(-5px); }
+  #versus .vs-sentinel:hover { box-shadow: 0 34px 65px -26px rgba(91, 103, 219, 0.55); }
+
+  /* CTA buttons */
+  .anim-btn { transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease; }
+  .anim-btn:hover { transform: translateY(-2px); }
+  .anim-btn:active { transform: translateY(0) scale(0.98); }
+
+  /* nav + footer links */
+  .anim-link { position: relative; transition: opacity 0.2s ease; }
+  .anim-link::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 100%;
+    bottom: -2px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.55;
+    transition: right 0.28s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .anim-link:hover::after { right: 0; }
+
+  /* feature buttons: nudge the inactive ones */
+  #features .feat-btn { transition: background-color 0.25s ease, transform 0.25s ease; }
+  #features .feat-btn:not(.is-active):hover { background-color: rgba(255, 255, 255, 0.6); transform: translateX(3px); }
+
+  /* claims marquee: pause on hover so people can actually read it */
+  .cb-mask:hover .cb-track { animation-play-state: paused; }
+
+  /* demo form focus pop */
+  .sf-input:focus, .sf-select:focus, .sf-textarea:focus { transform: translateY(-1px); }
+  .sf-input, .sf-select, .sf-textarea { transition: border-color 0.15s, box-shadow 0.15s, background 0.15s, transform 0.15s; }
+}
+
+/* ============================================================
+   Hero backdrop — a blurred attack in progress.
+   A contract sheet under a slow scan beam, flagged finding cards,
+   clause chips: the product, out of focus, behind the headline.
+   Replaces the inherited gradient <picture>.
+============================================================ */
+.ha-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 16%, #000 62%, transparent 98%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 16%, #000 62%, transparent 98%);
+}
+/* on-brand color wash under the blurred objects — presence without unblurring */
+.ha-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 46% 42% at 12% 24%, rgba(194, 65, 12, 0.14), transparent 70%),
+    radial-gradient(ellipse 44% 40% at 88% 20%, rgba(180, 35, 24, 0.12), transparent 70%),
+    radial-gradient(ellipse 52% 46% at 82% 78%, rgba(49, 95, 159, 0.16), transparent 72%),
+    radial-gradient(ellipse 40% 38% at 18% 82%, rgba(255, 217, 104, 0.20), transparent 70%);
+}
+.ha-blur {
+  position: absolute;
+  inset: -60px;
+  filter: blur(11px) saturate(1.18);
+  opacity: 0.88;
+}
+.ha-sheet {
+  position: absolute;
+  left: 4%;
+  top: 6%;
+  width: min(48vw, 620px);
+  padding: 46px 40px;
+  background: #ffffff;
+  border: 1px solid #eceae4;
+  border-radius: 20px;
+  transform: rotate(-2deg);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 40px 80px -40px rgba(29, 35, 48, 0.35);
+}
+.ha-ln { height: 14px; border-radius: 7px; background: #e2ddd2; }
+/* a second flagged line deep in the sheet (recolors an existing grey row) */
+.ha-sheet .ha-ln:nth-of-type(9) { background: rgba(180, 35, 24, 0.34); }
+.ha-bg .w92 { width: 92%; } .ha-bg .w90 { width: 90%; } .ha-bg .w88 { width: 88%; }
+.ha-bg .w86 { width: 86%; } .ha-bg .w85 { width: 85%; } .ha-bg .w83 { width: 83%; }
+.ha-bg .w80 { width: 80%; } .ha-bg .w78 { width: 78%; } .ha-bg .w75 { width: 75%; }
+.ha-bg .w74 { width: 74%; } .ha-bg .w70 { width: 70%; } .ha-bg .w60 { width: 60%; }
+.ha-bg .w55 { width: 55%; }
+.ha-mark { background: #ffd968; }
+.ha-bad  { background: rgba(180, 35, 24, 0.45); }
+.ha-beam {
+  position: absolute;
+  left: -6%;
+  right: -6%;
+  top: 0;
+  height: 130px;
+  background: linear-gradient(to bottom, transparent, rgba(194, 65, 12, 0.28), transparent);
+}
+.ha-card {
+  position: absolute;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #eceae4;
+  border-radius: 18px;
+  padding: 26px 28px;
+  box-shadow: 0 34px 70px -34px rgba(29, 35, 48, 0.38);
+}
+.ha-card > div { flex: 1; display: flex; flex-direction: column; gap: 13px; }
+.ha-card .ha-ln { height: 13px; }
+.ha-c1 { right: 3%; top: 13%; width: min(36vw, 460px); transform: rotate(2.2deg); }
+.ha-c2 { right: -3%; top: 60%; width: min(32vw, 420px); transform: rotate(-1.6deg); }
+.ha-bar { align-self: stretch; width: 8px; border-radius: 4px; flex: none; }
+.ha-red   { background: #b42318; }
+.ha-amber { background: #c2410c; }
+.ha-sev { width: 74px; height: 24px; border-radius: 999px; background: rgba(180, 35, 24, 0.3); flex: none; }
+.ha-chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: 600 24px/1 ui-monospace, Consolas, monospace;
+  color: #ffffff;
+  background: #1d3557;
+  border-radius: 12px;
+  padding: 14px 20px;
+  box-shadow: 0 24px 50px -24px rgba(29, 53, 87, 0.6);
+}
+.ha-p1 { left: 34%; top: 74%; transform: rotate(-4deg); }
+.ha-p2 { right: 30%; top: 46%; transform: rotate(3deg); }
+.ha-pill {
+  position: absolute;
+  left: 26%;
+  top: 62%;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #15803d;
+  opacity: 0.9;
+}
+/* soft clearing behind the headline so the copy stays crisp */
+.ha-fade {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 52% 44% at 50% 40%,
+    rgba(248, 248, 246, 0.8) 0%,
+    rgba(248, 248, 246, 0.24) 46%,
+    rgba(248, 248, 246, 0) 70%);
+}
+@media (max-width: 768px) {
+  .ha-sheet { left: -14%; width: 86vw; }
+  .ha-c1 { right: -12%; width: 62vw; }
+  .ha-c2, .ha-p1 { display: none; }
+  .ha-chip { font-size: 17px; padding: 9px 13px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ha-bg { animation: haIn 1.2s ease-out both; }
+  @keyframes haIn { from { opacity: 0; } to { opacity: 1; } }
+  /* slow, quiet drift — uses the translate property so the rotate
+     transforms above stay untouched */
+  .ha-sheet { animation: haDrift 26s ease-in-out -4s infinite alternate; }
+  .ha-c1    { animation: haDrift 20s ease-in-out -11s infinite alternate; }
+  .ha-c2    { animation: haDrift 24s ease-in-out -7s infinite alternate; }
+  .ha-p1    { animation: haDrift 18s ease-in-out -2s infinite alternate; }
+  .ha-p2    { animation: haDrift 21s ease-in-out -9s infinite alternate; }
+  @keyframes haDrift { from { translate: 0 0; } to { translate: 0 -24px; } }
+  .ha-beam { animation: haBeam 9s ease-in-out infinite; }
+  @keyframes haBeam {
+    0%   { transform: translateY(-80px); opacity: 0; }
+    10%  { opacity: 1; }
+    58%  { opacity: 1; }
+    72%  { transform: translateY(520px); opacity: 0; }
+    100% { transform: translateY(520px); opacity: 0; }
+  }
+}
+
+/* Fallback when the visitor prefers reduced motion: everything stays
+   visible and static; only instant state changes remain. */
+@media (prefers-reduced-motion: reduce) {
+  .rv { opacity: 1; transform: none; }
+}
