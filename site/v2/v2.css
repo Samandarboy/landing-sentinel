@@ -449,7 +449,7 @@ img, svg { display: block; max-width: 100%; }
 .form-success p { color: var(--muted); }
 
 /* ---------- book a call: Cal.com inline, lazy-loaded when the block is near ---------- */
-.call { margin-top: 64px; display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 48px; padding: 36px; border: 1px solid var(--line); border-radius: 22px; background: linear-gradient(180deg, var(--bg-1), var(--bg)); position: relative; overflow: hidden; }
+.call { margin-top: 56px; display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 48px; padding: 36px; border: 1px solid var(--line); border-radius: 22px; background: linear-gradient(180deg, var(--bg-1), var(--bg)); position: relative; overflow: hidden; }
 .call::before { content: ""; position: absolute; left: -10%; top: -60%; width: 46%; height: 160%; pointer-events: none; background: radial-gradient(closest-side, rgba(26, 47, 230, 0.18), transparent); }
 .call-copy { position: relative; display: flex; flex-direction: column; gap: 18px; align-self: start; }
 .call-h { font-size: clamp(28px, 2.6vw, 36px); line-height: 1.05; letter-spacing: -0.022em; font-weight: 510; margin-top: 4px; }

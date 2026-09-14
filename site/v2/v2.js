@@ -25,7 +25,6 @@
     setupSecurity();
     setupFilm();
     setupFaq();
-    setupForm();
     setupCal();
     setupAnchors();
   }
