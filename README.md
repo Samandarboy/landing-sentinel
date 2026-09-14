@@ -38,6 +38,12 @@ Then open **http://localhost:8080**.
 The interface-demo fonts (Inter / IBM Plex Mono / Source Serif 4) load from
 Google Fonts with system fallbacks; everything else is local.
 
+## The live page
+
+`site/index.html` is the v2 page (a copy of `site/v2/index.html` with absolute media
+paths, so it can be served from the root). The previous Next.js-export page lives on at
+`site/legacy/index.html`.
+
 ## v2 — the rebuilt page (`site/v2/`)
 
 A from-scratch rebuild of the landing on the layout and motion vocabulary of
