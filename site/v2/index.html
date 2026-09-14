@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sentinel — Attack the contract before the other side does</title>
+<meta name="description" content="Sentinel hunts for the loopholes, contradictions and impossible terms a read-through misses, and proves every one with the exact clause. Runs on your own machines.">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/landing/sentinel-demo.css">
+<link rel="stylesheet" href="/v2/v2.css">
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="Sentinel home">
+      <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#f7f8f8"/><rect x="6" y="10.5" width="12" height="3" rx="1.5" fill="#08090a"/></svg>
+      Sentinel
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#product">Product</a>
+      <a href="#how">How it works</a>
+      <a href="#proof">Proof</a>
+      <a href="#security">Security</a>
+      <a href="#film">Watch</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="header-right">
+      <a class="btn btn-sm" href="#demo">Book a demo</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="pill" id="pill" aria-hidden="true">
+  <a class="brand" href="#top">
+    <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#f7f8f8"/><rect x="6" y="10.5" width="12" height="3" rx="1.5" fill="#08090a"/></svg>
+    Sentinel
+  </a>
+  <nav class="nav">
+    <a href="#how">How it works</a>
+    <a href="#proof">Proof</a>
+    <a href="#security">Security</a>
+  </nav>
+  <a class="btn btn-sm" href="#demo">Book a demo</a>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#product">Product</a>
+  <a href="#how">How it works</a>
+  <a href="#proof">Proof</a>
+  <a href="#security">Security</a>
+  <a href="#film">Watch</a>
+  <a href="#faq">FAQ</a>
+  <a class="btn" href="#demo">Book a demo</a>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="product">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <h1 class="h1 hero-title">Attack the contract before the other side does.</h1>
+      <div class="hero-row">
+        <div class="hero-left">
+          <p class="hero-lede">Sentinel hunts for the loopholes, contradictions and impossible terms a read-through misses, then proves each one with the exact clause.</p>
+          <div class="hero-ctas">
+            <a class="btn" href="#demo">Book a demo</a>
+            <a class="link-arrow" href="#how">See how it works
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="hero-facts">On-premise or air-gapped<br>No data leaves your building<br>Every finding cited to its clause</div>
+      </div>
+    </div>
+    <div class="frame-wrap" id="heroFrame">
+      <div class="frame">
+        <div class="frame-demo"><div class="sd-demo" data-demo="detect" aria-label="Sentinel detecting findings in a contract"></div></div>
+        <div class="grain" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATEMENT + CARDS ============ -->
+  <section class="statement-sec">
+    <div class="container">
+      <p class="statement" id="statement"><span class="lead">Most legal AI summarizes. Sentinel attacks.</span><br class="lb"> <span class="rest">It reads your contract like opposing counsel,<br class="lb"> finds every way the deal turns against you,<br class="lb"> and points to the exact clause.</span></p>
+
+      <div class="cards">
+        <article class="card" data-reveal style="--d:0s">
+          <div class="card-art" aria-hidden="true">
+            <svg viewBox="0 0 320 200" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+              <defs><linearGradient id="beamG" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff9f43" stop-opacity="0"/><stop offset=".5" stop-color="#ff9f43" stop-opacity=".4"/><stop offset="1" stop-color="#ff9f43" stop-opacity="0"/></linearGradient></defs>
+              <rect x="70" y="22" width="122" height="156" rx="8"/>
+              <path d="M90 50h82M90 66h62M90 82h82M90 98h50M90 114h82M90 130h58M90 146h74"/>
+              <path class="art-flag" d="M90 82h82" stroke="#ff5f57" stroke-width="2"/>
+              <path class="art-flag d2" d="M90 130h58" stroke="#ff9f43" stroke-width="2"/>
+              <rect class="art-beam" x="60" y="20" width="142" height="20" rx="4" fill="url(#beamG)" stroke="none"/>
+              <path d="M172 82h48" stroke-dasharray="3 5"/>
+              <circle cx="246" cy="82" r="22"/><circle cx="246" cy="82" r="3" fill="currentColor" stroke="none"/>
+              <path d="M246 52v10M246 102v10M216 82h10M266 82h10"/>
+            </svg>
+          </div>
+          <h3>Built to attack, not autocomplete</h3>
+          <p>Reads every clause the way the other side will. Hunts for loopholes, contradictions and terms that can’t both be true.</p>
+        </article>
+
+        <article class="card" data-reveal style="--d:.1s">
+          <div class="card-art" aria-hidden="true">
+            <svg viewBox="0 0 320 200" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="28" y="30" width="152" height="64" rx="8"/>
+              <rect x="42" y="44" width="34" height="12" rx="6" stroke="#ff5f57"/>
+              <path d="M84 50h60M42 70h100M42 82h72"/>
+              <path class="art-dash" d="M180 62h34c12 0 18 6 18 18v10c0 12 6 18 18 18h12" stroke-dasharray="4 6"/>
+              <rect x="200" y="96" width="92" height="76" rx="8"/>
+              <text x="212" y="116" font-family="IBM Plex Mono, monospace" font-size="10" fill="currentColor" stroke="none">§ 7.2</text>
+              <rect x="212" y="138" width="50" height="9" rx="2" fill="rgba(255,214,102,.28)" stroke="none"/>
+              <path d="M212 130h68M212 142h50M212 154h68"/>
+              <path d="M60 134V94" stroke-dasharray="3 5"/>
+              <circle cx="60" cy="150" r="16"/><path d="M52 150l6 6 11-12" stroke="#2fd27f" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Proof, not opinions</h3>
+          <p>Every finding comes with the clause, the scenario that triggers it and the redline that fixes it.</p>
+        </article>
+
+        <article class="card" data-reveal style="--d:.2s">
+          <div class="card-art" aria-hidden="true">
+            <svg viewBox="0 0 320 200" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="30" y="20" width="260" height="160" rx="16" stroke-dasharray="4 6"/>
+              <rect x="110" y="56" width="100" height="100" rx="4"/>
+              <path d="M110 156h100M126 76h12M150 76h12M174 76h12M126 96h12M150 96h12M174 96h12M126 116h12M150 116h12M174 116h12M150 136h20v20h-20z"/>
+              <rect x="236" y="122" width="26" height="20" rx="4"/><path d="M241 122v-6a8 8 0 0 1 16 0v6"/>
+              <path d="M210 92h58" stroke-dasharray="3 5"/>
+              <path d="M284 84l14 16M298 84l-14 16" stroke="#ff5f57" stroke-width="1.5"/>
+              <circle class="art-pulse" cx="70" cy="70" r="3" fill="currentColor" stroke="none"/>
+              <circle class="art-pulse" cx="62" cy="130" r="3" fill="currentColor" stroke="none" style="animation-delay:.9s"/>
+              <circle class="art-pulse" cx="250" cy="52" r="3" fill="currentColor" stroke="none" style="animation-delay:1.7s"/>
+            </svg>
+          </div>
+          <h3>Stays in your building</h3>
+          <p>On-premise or air-gapped. No contract, clause or finding ever leaves your network.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS (scroll-driven) ============ -->
+  <section class="how" id="how">
+    <div class="how-sticky container">
+      <div class="how-steps">
+        <div class="eyebrow">How it works</div>
+        <h2 class="h2">Three passes over one contract.</h2>
+        <ol class="steps" id="steps">
+          <li class="step is-active" data-step="0">
+            <span class="step-bar"><i></i></span>
+            <span class="step-num">01 — DETECT</span>
+            <h3>Find how it breaks.</h3>
+            <p>A ranked hit-list of loopholes, contradictions and impossible terms, each cited to its clause.</p>
+          </li>
+          <li class="step" data-step="1">
+            <span class="step-bar"><i></i></span>
+            <span class="step-num">02 — SIMULATE</span>
+            <h3>See how it plays out.</h3>
+            <p>Miss a payment. Blow a deadline. Walk away early. Sentinel plays it forward and shows where you’re exposed.</p>
+          </li>
+          <li class="step" data-step="2">
+            <span class="step-bar"><i></i></span>
+            <span class="step-num">03 — REPORT</span>
+            <h3>Get the memo.</h3>
+            <p>A plain-English memo with every finding, citation and redline. Export to PDF or DOCX.</p>
+          </li>
+        </ol>
+      </div>
+      <div class="stage" id="stage">
+        <div class="stage-panel is-active" data-index="0"><div class="sd-demo" data-demo="detect"></div></div>
+        <div class="stage-panel" data-index="1"><div class="sd-demo" data-demo="simulate"></div></div>
+        <div class="stage-panel" data-index="2"><div class="sd-demo" data-demo="report"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROOF (cobalt block, black panel, tabs) ============ -->
+  <section class="proof" id="proof">
+    <div class="proof-panel">
+      <canvas class="stars" id="stars" aria-hidden="true"></canvas>
+      <div class="proof-head" data-reveal="blur">
+        <h2 class="h2">Ask a chatbot, and it answers.<br><span class="blue">Ask Sentinel, and it proves.</span></h2>
+        <p class="intro">Same question, two kinds of answer. Only one of them can be checked.</p>
+      </div>
+      <div class="tabs-wrap" data-reveal style="--d:.1s">
+        <div class="tabs" role="tablist" id="tabs">
+          <span class="tab-ind" aria-hidden="true"></span>
+          <button class="tab is-active" role="tab" aria-selected="true" data-tab="0">Liability cap</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="1">Termination</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="2">Payment</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="3">Exclusivity</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="4">Assignment</button>
+        </div>
+      </div>
+      <div class="duel" id="duel" data-reveal style="--d:.2s">
+        <div class="duel-q" id="duelQ">
+          <span class="duel-q-lbl">You ask</span>
+          <span class="duel-q-text" id="duelQText"></span><span class="duel-caret" aria-hidden="true"></span>
+        </div>
+        <div class="duel-cols">
+          <article class="ans ans-bot" aria-live="polite">
+            <header class="ans-head"><span class="ans-avatar bot" aria-hidden="true">AI</span><span class="lbl">A chatbot</span><span class="ans-tag">answers</span></header>
+            <div class="bubble" id="bubble">
+              <span class="typing" aria-hidden="true"><i></i><i></i><i></i></span>
+              <p class="bubble-text" id="bubbleText"></p>
+            </div>
+            <ul class="receipt" id="receipt">
+              <li><span>Clause cited</span><b>none</b></li>
+              <li><span>Scenario played</span><b>none</b></li>
+              <li><span>Can you check it?</span><b>no</b></li>
+            </ul>
+          </article>
+          <article class="ans ans-sen" aria-live="polite">
+            <header class="ans-head">
+              <span class="ans-avatar sen" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#f7f8f8"/><rect x="6" y="10.5" width="12" height="3" rx="1.5" fill="#08090a"/></svg></span>
+              <span class="lbl">Sentinel</span><span class="ans-tag proven">proves</span>
+            </header>
+            <p class="verdict" id="verdict"></p>
+            <ol class="ladder" id="ladder">
+              <li class="rung"><span class="rung-tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="rung-k">Clause</span><span class="rung-v"></span></li>
+              <li class="rung"><span class="rung-tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="rung-k">Scenario</span><span class="rung-v"></span></li>
+              <li class="rung"><span class="rung-tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="rung-k">Trace</span><span class="rung-v"></span></li>
+            </ol>
+            <div class="fix" id="fix"><span class="chip-redline">Redline</span><span class="fix-text" id="fixText"></span></div>
+          </article>
+        </div>
+        <div class="duel-foot">
+          <span class="duel-outcome">One is a guess dressed as an answer. The other is a claim you can check in twenty seconds.</span>
+          <a class="link-arrow" href="#how">See how it’s proven
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="proof-note">Illustrative examples. Your findings cite your clauses.</div>
+    </div>
+  </section>
+
+  <!-- ============ SECURITY ============ -->
+  <section class="security" id="security">
+    <div class="container">
+      <div class="split-head">
+        <h2 class="h2" data-reveal>Stays in your building.<br><span class="dim">Nothing leaves it.</span></h2>
+        <p data-reveal style="--d:.1s">Sentinel runs on your machines, fully offline if you need it. Pull the plug and it keeps working.</p>
+      </div>
+      <div class="field-panel" id="fieldPanel" data-reveal style="--d:.15s">
+        <canvas id="dots" aria-hidden="true"></canvas>
+        <div class="perimeter" aria-hidden="true"><span id="perimeterLbl">Your network</span></div>
+        <div class="field-diagram">
+          <div class="node">
+            <div class="node-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg></div>
+            <div class="node-lbl">Your contracts</div>
+            <div class="node-sub">PDF · DOCX · CLM</div>
+          </div>
+          <div class="node-link" aria-hidden="true"></div>
+          <div class="node">
+            <div class="node-box"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#f7f8f8"/><rect x="6" y="10.5" width="12" height="3" rx="1.5" fill="#08090a"/></svg></div>
+            <div class="node-lbl">Sentinel</div>
+            <div class="node-sub">ON YOUR MACHINES</div>
+          </div>
+          <div class="node-link d2" aria-hidden="true"></div>
+          <div class="node">
+            <div class="node-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M8 10h8M8 14h5"/></svg></div>
+            <div class="node-lbl">Cited memo</div>
+            <div class="node-sub">PDF · DOCX</div>
+          </div>
+        </div>
+        <div class="egress" aria-hidden="true">
+          <div class="egress-link">
+            <i class="egress-pkt"></i><i class="egress-pkt p2"></i>
+            <span class="egress-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+          </div>
+          <div class="node node-out">
+            <div class="node-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.2 9.6 4.5 4.5 0 0 0 7 18z"/></svg></div>
+            <div class="node-lbl">The internet</div>
+            <div class="node-sub">0 bytes, ever</div>
+          </div>
+        </div>
+        <button class="plug" id="plug" type="button" aria-pressed="false">
+          <span class="plug-lbl">Network</span>
+          <span class="switch" aria-hidden="true"><i></i></span>
+          <span class="plug-state" id="plugState">Connected</span>
+        </button>
+        <p class="field-note" id="plugNote">Connected, and still nothing leaves: every outbound call is refused at your edge.</p>
+        <div class="field-hud" aria-hidden="true">
+          <span class="hud" id="hudOut"><b class="zero">0 B</b>out</span>
+          <span class="hud"><b>Local</b>model</span>
+          <span class="hud"><b>Yours</b>audit log</span>
+        </div>
+      </div>
+      <div class="trio">
+        <div data-reveal style="--d:0s"><h3>On-premise or air-gapped</h3><p>Deploy fully offline. Analysis needs no outbound call.</p></div>
+        <div data-reveal style="--d:.1s"><h3>SSO, SAML and access controls</h3><p>Granular roles, credit pools and a full audit trail for every run.</p></div>
+        <div data-reveal style="--d:.2s"><h3>Checkable by design</h3><p>Every finding carries its clause. Verify it in seconds.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FILM ============ -->
+  <section class="film-sec" id="film">
+    <div class="container">
+      <div class="split-head">
+        <h2 class="h2" data-reveal>Fifty seconds.<br><span class="dim">One contract, no cuts.</span></h2>
+        <p data-reveal style="--d:.1s">Upload, parse, detect, ask what-if, hand over the memorandum. The real interface, on one real agreement.</p>
+      </div>
+      <div class="film" id="film-box" data-reveal style="--d:.15s">
+        <div class="film-screen">
+          <video class="film-video" id="filmVideo" playsinline preload="metadata" poster="media/sentinel-demo-poster.jpg" aria-label="Sentinel product demonstration, 51 seconds, no sound">
+            <source src="media/sentinel-demo.webm" type="video/webm">
+            <source src="media/sentinel-demo.mp4" type="video/mp4">
+          </video>
+          <div class="film-progress" aria-hidden="true"><i id="filmBar"></i></div>
+          <button class="film-poster" id="filmPoster" type="button">
+            <span class="poster-copy"><span class="eyebrow">Watch</span><span class="poster-title">Sentinel breaks a contract<br>in fifty seconds.</span></span>
+            <span class="play" aria-hidden="true"><span class="play-ring"></span><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+            <span class="film-dur">0:51 · no sound</span>
+          </button>
+          <button class="film-resume" id="filmResume" type="button" aria-label="Resume" hidden><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+          <div class="film-end" id="filmEnd" hidden>
+            <h3 class="h2">Now on one of yours.</h3>
+            <div class="film-end-actions"><a class="btn" href="#demo">Book a demo</a><button class="btn btn-ghost" id="filmReplay" type="button">Watch again</button></div>
+          </div>
+        </div>
+        <p class="film-note">Recorded in the product on a sample agreement. The analysis is a replay of a completed run.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq-sec" id="faq">
+    <div class="container faq-grid">
+      <div class="faq-copy">
+        <div class="eyebrow" data-reveal>FAQ</div>
+        <h2 class="h2" data-reveal style="--d:.05s; margin-top:16px">Questions a careful buyer asks.</h2>
+        <p data-reveal style="--d:.1s">The worries left at the end of the page, answered in a sentence.</p>
+      </div>
+      <div class="faq" data-reveal style="--d:.1s">
+        <details open><summary>Does Sentinel use a language model?<i></i></summary><div class="faq-a"><p>Not to find or prove a finding. Findings come from a deterministic engine that reads the clauses and plays the contract forward. A language model is used only to talk with you about the results.</p></div></details>
+        <details><summary>How is a finding “proven”?<i></i></summary><div class="faq-a"><p>Each one carries the clause it comes from, the scenario that triggers it, and a replayable trace. You can check every step yourself.</p></div></details>
+        <details><summary>Where does it run, and what leaves the building?<i></i></summary><div class="faq-a"><p>On your own machines, fully offline if you need it. No contract, clause or finding leaves your network.</p></div></details>
+        <details><summary>Which formats and languages?<i></i></summary><div class="faq-a"><p>PDF and DOCX in, a memorandum in PDF or DOCX out. The interface is available in English and Russian.</p></div></details>
+        <details><summary>What does the memorandum contain?<i></i></summary><div class="faq-a"><p>Every finding, ranked by exposure, with its citation and a redline. The page, the PDF and the DOCX are the same document.</p></div></details>
+        <details><summary>Can we run it on our own playbook?<i></i></summary><div class="faq-a"><p>Yes. Stance-based redlines and custom playbooks tell the engine which side you are on and what you will not accept.</p></div></details>
+        <details><summary>How do we start?<i></i></summary><div class="faq-a"><p>A 15-minute walkthrough on one of your own agreements. Bring a tricky clause.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA + FORM ============ -->
+  <section class="cta" id="demo">
+    <div class="container cta-grid">
+      <div class="cta-head">
+        <div class="eyebrow" data-reveal>Book a demo</div>
+        <h2 class="h2" data-reveal style="--d:.05s; margin-top:16px">See Sentinel break a real contract.</h2>
+        <p data-reveal style="--d:.1s">A 15-minute walkthrough on one of your own agreements. We’ll show you where it breaks, clause by clause.</p>
+        <div class="meta" data-reveal style="--d:.15s">Bring a tricky clause.<br>We reply within one business day.</div>
+      </div>
+      <div data-reveal style="--d:.15s">
+        <form class="form" id="demoForm" novalidate>
+          <div class="field"><label for="sf-first">First name</label><input class="sf-input" id="sf-first" name="first" autocomplete="given-name" placeholder="Jane" required></div>
+          <div class="field"><label for="sf-last">Last name</label><input class="sf-input" id="sf-last" name="last" autocomplete="family-name" placeholder="Smith" required></div>
+          <div class="field"><label for="sf-email">Work email</label><input class="sf-input" id="sf-email" name="email" type="email" autocomplete="email" placeholder="jane@company.com" required></div>
+          <div class="field"><label for="sf-company">Company</label><input class="sf-input" id="sf-company" name="company" autocomplete="organization" placeholder="Acme Legal Ltd" required></div>
+          <div class="field full"><label for="sf-msg">Anything specific you want to see? <small>(optional)</small></label><textarea class="sf-textarea" id="sf-msg" name="message" placeholder="Paste a tricky clause, or tell us about your workflow."></textarea></div>
+          <div class="form-foot">
+            <small>We’ll only use your details to arrange the demo.</small>
+            <button class="btn sf-btn" type="submit">Book a demo
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </form>
+        <div class="form-success" id="demoSuccess" role="status">
+          <h3>Thanks, you’re on the list.</h3>
+          <p>We’ll reach out within one business day to set up your walkthrough.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top">
+          <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#f7f8f8"/><rect x="6" y="10.5" width="12" height="3" rx="1.5" fill="#08090a"/></svg>
+          Sentinel
+        </a>
+        <p>Sentinel finds how your contract breaks, and proves it, clause by clause.</p>
+      </div>
+      <div><h4>Product</h4><ul><li><a href="#how">How it works</a></li><li><a href="#proof">Proof</a></li><li><a href="#security">Security</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#demo">Book a demo</a></li><li><a href="#demo">Contact</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/legal/terms-of-service">Terms</a></li><li><a href="/legal/privacy-policy">Privacy</a></li><li><a href="/security">Security</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Sentinel. All rights reserved.</span><span>Built for legal teams that have to be right.</span></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
+<script src="/feature-demos.js"></script>
+<script src="/v2/v2.js"></script>
+</body>
+</html>

@@ -68,15 +68,44 @@
         sum: 'Any Tencent objection during the 6–9 month pendency could block normal-course business.',
         refs: ['§6.4', '§1.6'] }
     ];
+    // the first finding opens after the list has settled (--o): an inline detail,
+    // like the product's accordion — what it means, the clause, the actions
+    var OPEN_AT = 6.9;
+    // the same sections the product's detail panel shows: what it means, what is at
+    // stake, how we know (clause by clause), the actions, and the facts column
+    var detail = '<div class="sd-detail"><div class="sd-detail-in">' +
+      '<div class="sd-detail-main">' +
+        '<div class="sd-dl">What this means</div>' +
+        '<p class="sd-dp">Both the closing condition (§6.1) and the termination right (§7.1) turn on a term the agreement never defines. One bad quarter is arguably a MAC — or arguably not — and either side can litigate the difference.</p>' +
+        '<div class="sd-dl">At stake</div>' +
+        '<div class="sd-stake"><b>The closing itself</b><span>Either side can refuse to close (§6.1) or walk away (§7.1) on a word nobody defined.</span></div>' +
+        '<div class="sd-dl">How we know</div>' +
+        '<div class="sd-how">' +
+          '<div class="sd-how-row"><span class="sd-ref">§ 1.3</span><span>Defined terms: 41 entries. “Material Adverse Change” is not among them.</span></div>' +
+          '<div class="sd-how-row"><span class="sd-ref">§ 6.1(b)</span><span>“…no <mark>Material Adverse Change</mark> shall have occurred since the Balance Sheet Date.”</span></div>' +
+          '<div class="sd-how-row"><span class="sd-ref">§ 7.1(c)</span><span>“…may terminate this Agreement if a <mark>Material Adverse Change</mark> has occurred.”</span></div>' +
+          '<div class="sd-how-foot">Computed from the contract’s own text · confirmed on a second, independent reading · replayable at no cost</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="sd-detail-side">' +
+        '<span class="sd-btn is-primary">Accept finding</span><span class="sd-btn">Dismiss</span><span class="sd-btn">Synthesize a verified fix</span><span class="sd-btn is-ghost">Stress-test this</span>' +
+        '<div class="sd-kv"><span>Severity</span><b class="crit">Critical</b></div>' +
+        '<div class="sd-kv"><span>Confidence</span><b class="ok">High</b></div>' +
+        '<div class="sd-kv"><span>Clauses</span><b>§1.3 · §6.1(b) · §7.1(c)</b></div>' +
+        '<div class="sd-kv"><span>Who benefits</span><b>Whoever wants out</b></div>' +
+      '</div>' +
+    '</div></div>';
     var t0 = 2.6, step = 1.15;
     var cardHTML = cards.map(function (c, i) {
       var d = (t0 + i * step).toFixed(2);
-      return '<li class="sd-card sd-anim" style="--d:' + d + 's">' +
+      var open = i === 0;
+      return '<li class="sd-card sd-anim' + (open ? ' sd-open' : '') + '" style="--d:' + d + 's' + (open ? ';--o:' + OPEN_AT + 's' : '') + '">' +
         '<span class="sd-bar ' + c.sev + '"></span>' +
         '<div><div class="sd-card-top"><span class="sd-card-title">' + c.title + '</span>' +
         '<span class="sd-badges"><span class="sd-sev ' + c.sev + '">Critical</span><span class="sd-deg">' + ICONS.check + 'Proven · 1st°</span></span></div>' +
         '<p class="sd-card-sum">' + c.sum + '</p>' +
         '<div class="sd-refs">' + c.refs.map(function (r) { return '<span class="sd-ref">' + r + '</span>'; }).join('') + '</div>' +
+        (open ? detail : '') +
         '</div></li>';
     }).join('');
     var chips = [
@@ -215,11 +244,17 @@
   function fit(demo) {
     var w = demo.root.clientWidth, h = demo.root.clientHeight;
     if (!w || !h) return;
-    var s = Math.min(w / DESIGN_W, h / DESIGN_H);
+    // The design surface is 920x690 unless CSS re-sizes it (phones re-flow the
+    // interface into a narrow single column). With `--fit: width` on the root
+    // the surface is scaled to the root's width and the root crops the rest,
+    // so a camera keyframe can pan down a tall surface without a blank strip.
+    var dw = demo.surface.offsetWidth || DESIGN_W, dh = demo.surface.offsetHeight || DESIGN_H;
+    var mode = (window.getComputedStyle(demo.root).getPropertyValue('--fit') || '').trim();
+    var s = mode === 'width' ? w / dw : Math.min(w / dw, h / dh);
     demo.surface.style.transform = 'scale(' + s + ')';
     // center the letterboxed remainder, if any
-    demo.surface.style.left = Math.max(0, (w - DESIGN_W * s) / 2) + 'px';
-    demo.surface.style.top = Math.max(0, (h - DESIGN_H * s) / 2) + 'px';
+    demo.surface.style.left = Math.max(0, (w - dw * s) / 2) + 'px';
+    demo.surface.style.top = mode === 'width' ? '0px' : Math.max(0, (h - dh * s) / 2) + 'px';
   }
 
   function init() {

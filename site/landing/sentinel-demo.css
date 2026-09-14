@@ -73,7 +73,9 @@
 }
 @keyframes sdCamDetect {
   0%, 20% { transform: none; }                                  /* full app while the scan sweeps */
-  38%, 100% { transform: translate(-358px, -124px) scale(1.4); } /* into the findings list */
+  38%, 60% { transform: translate(-358px, -124px) scale(1.4); } /* into the findings list */
+  74% { transform: translate(-358px, -238px) scale(1.4); }     /* the finding opens: its head */
+  100% { transform: translate(-358px, -266px) scale(1.4); }    /* …and the camera drifts down through it */
 }
 .sd-demo.is-playing[data-demo="simulate"] .sd-cam {
   animation: sdCamSim 12.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
@@ -434,6 +436,120 @@
   padding: 1.5px 6px;
 }
 
+/* ---------- the first finding opens (at --o): an inline detail, like the product's accordion ---------- */
+.sd-card { position: relative; }
+.sd-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  opacity: 0;
+  pointer-events: none;
+}
+.sd-demo.is-playing .sd-card.sd-open::after { animation: sdShow 0.4s forwards; animation-delay: var(--o, 6.9s); }
+.sd-detail { max-height: 0; opacity: 0; overflow: hidden; }
+.sd-demo.is-playing .sd-card.sd-open .sd-detail {
+  animation: sdOpen 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: var(--o, 6.9s);
+}
+@keyframes sdOpen {
+  from { max-height: 0; opacity: 0; }
+  35% { opacity: 1; }
+  to { max-height: 700px; opacity: 1; }
+}
+.sd-detail-in {
+  margin-top: 11px;
+  padding-top: 11px;
+  border-top: 1px solid var(--border-hairline);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 168px;
+  gap: 16px;
+}
+.sd-stake {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 7px 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  background: var(--bg-app);
+  margin: 0 0 9px;
+}
+.sd-stake b { font-size: 11px; font-weight: 650; color: var(--text-primary); }
+.sd-stake span { font-size: 9.5px; line-height: 1.45; color: var(--text-secondary); }
+.sd-how { display: flex; flex-direction: column; gap: 4px; }
+.sd-how-row {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr);
+  gap: 8px;
+  align-items: baseline;
+  font-size: 9.5px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}
+.sd-how-row .sd-ref { text-align: center; }
+.sd-how-row mark { background: var(--bg-mark); color: var(--text-primary); padding: 0 2px; border-radius: 2px; }
+.sd-how-foot { margin-top: 2px; font-size: 8.5px; line-height: 1.4; color: var(--text-faint); }
+.sd-dl {
+  font-family: var(--font-ui);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 0 0 4px;
+}
+.sd-dp {
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0 0 10px;
+}
+.sd-dp:last-child { margin-bottom: 0; }
+.sd-dq {
+  font-family: var(--font-doc);
+  font-style: italic;
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  padding: 7px 10px;
+  border-left: 2px solid var(--accent);
+  background: var(--bg-sunken);
+  border-radius: 0 6px 6px 0;
+  margin: 0 0 10px;
+}
+.sd-dq mark { background: var(--bg-mark); color: var(--text-primary); padding: 0 2px; border-radius: 2px; font-style: normal; }
+.sd-dq .sd-ref { margin-left: 6px; font-style: normal; }
+.sd-detail-side { display: flex; flex-direction: column; gap: 5px; }
+.sd-btn {
+  display: block;
+  text-align: center;
+  font-size: 9.5px;
+  font-weight: 600;
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  background: var(--bg-app);
+}
+.sd-btn.is-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.sd-btn.is-ghost { border-color: transparent; color: var(--text-muted); }
+.sd-kv {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 9px;
+  padding: 4px 0;
+  border-top: 1px solid var(--border-hairline);
+}
+.sd-btn + .sd-kv { margin-top: 6px; }
+.sd-kv span { font-size: 7.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-faint); }
+.sd-kv b { font-weight: 600; color: var(--text-primary); text-align: right; }
+.sd-kv b.crit { color: var(--sev-crit); }
+.sd-kv b.ok { color: var(--sev-ok); }
+
 /* ============================================================
    Demo 2 — Simulate
 ============================================================ */
@@ -697,4 +813,6 @@
   .sd-demo.is-playing .sd-st.run { animation: none; opacity: 0; visibility: hidden; }
   .sd-demo.is-playing .sd-st.done { animation: none; opacity: 1; }
   .sd-demo .sd-cam, .sd-demo.is-playing .sd-cam { animation: none; transform: none; }
+  .sd-demo .sd-detail, .sd-demo.is-playing .sd-card.sd-open .sd-detail { animation: none; max-height: none; opacity: 1; }
+  .sd-demo.is-playing .sd-card.sd-open::after { animation: none; opacity: 1; }
 }

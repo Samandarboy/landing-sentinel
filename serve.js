@@ -53,11 +53,24 @@ const server = http.createServer((req, res) => {
       else { res.writeHead(404, { 'Content-Type': 'text/plain' }); return res.end('404 Not Found: ' + pathname); }
     }
     const ext = path.extname(file).toLowerCase();
-    res.writeHead(200, {
+    const size = fs.statSync(file).size;
+    const headers = {
       'Content-Type': MIME[ext] || 'application/octet-stream',
       'Access-Control-Allow-Origin': '*',
       'Cache-Control': 'no-cache',
-    });
+      'Accept-Ranges': 'bytes',
+    };
+    // Range requests: the <video> elements seek, and a server that ignores
+    // Range makes every seek re-download the file from byte 0.
+    const range = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
+    if (range && (range[1] || range[2])) {
+      const start = range[1] ? parseInt(range[1], 10) : Math.max(0, size - parseInt(range[2], 10));
+      const end = range[1] && range[2] ? Math.min(parseInt(range[2], 10), size - 1) : size - 1;
+      if (start >= size || start > end) { res.writeHead(416, { 'Content-Range': 'bytes */' + size }); return res.end(); }
+      res.writeHead(206, Object.assign({}, headers, { 'Content-Range': 'bytes ' + start + '-' + end + '/' + size, 'Content-Length': end - start + 1 }));
+      return fs.createReadStream(file, { start, end }).pipe(res);
+    }
+    res.writeHead(200, Object.assign({}, headers, { 'Content-Length': size }));
     fs.createReadStream(file).pipe(res);
   } catch (e) {
     res.writeHead(500, { 'Content-Type': 'text/plain' });
