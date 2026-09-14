@@ -21,7 +21,7 @@ Then open **http://localhost:8080**.
 
 | Path | What it is |
 |------|------------|
-| `site/index.html`            | the page (single file, hand-maintained) |
+| `site/index.html`            | the live page (v2, see below); the old single-file page is `site/legacy/index.html` |
 | `site/favicon.ico`           | Sentinel mark (generated, 168 bytes) |
 | `site/feature-demos.js`      | live animated demos of the Sentinel interface (Detect / Simulate / Report) with camera zooms, built on the Valve/Riot fixture data |
 | `site/feature-carousel.js`   | auto-advancing Key-Features carousel driving the demos |
@@ -73,8 +73,7 @@ at stake, how we know, the actions) and the camera drifts down through it. On
 phones the demos re-flow into a single 400px column (no rail, no library) on a
 tall surface that is fitted by width (`--fit: width`) and panned, so the frames
 keep their corners and nothing is cropped mid-element. GSAP + ScrollTrigger and
-Lenis load from cdnjs / jsdelivr; fonts from Google Fonts. The original page
-at `/` is untouched.
+Lenis load from cdnjs / jsdelivr; fonts from Google Fonts.
 
 ## Proposals page (`site/proposals/`)
 
