@@ -26,6 +26,7 @@
     setupFilm();
     setupFaq();
     setupForm();
+    setupCal();
     setupAnchors();
   }
 
@@ -542,6 +543,34 @@
         });
       }, { threshold: 0.5 }).observe(panel);
     }
+  }
+
+  /* ---------- book a call: the Cal.com inline embed, loaded only once the block is near the viewport ---------- */
+  function setupCal() {
+    var box = $('#calInline');
+    if (!box) return;
+    var skel = $('#calSkel'), fallback = $('#calFallback');
+    var started = false;
+    function fail() { if (skel) skel.hidden = true; if (fallback) fallback.hidden = false; }
+    function start() {
+      if (started) return;
+      started = true;
+      // Cal's loader, as documented; the first call injects embed.js and queues the rest
+      (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; var s = d.createElement('script'); s.src = A; s.onerror = fail; d.head.appendChild(s); cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === 'string') { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ['initNamespace', namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, 'https://app.cal.com/embed/embed.js', 'init');
+      window.Cal('init', 'demo', { origin: 'https://app.cal.com' });
+      window.Cal.config = window.Cal.config || {};
+      window.Cal.config.forwardQueryParams = true;
+      window.Cal.ns.demo('inline', { elementOrSelector: '#calInline', config: { layout: 'month_view', useSlotsViewOnSmallScreen: 'true', theme: 'dark' }, calLink: 'sentinel-ai/demo' });
+      window.Cal.ns.demo('ui', { theme: 'dark', hideEventTypeDetails: false, layout: 'month_view', styles: { branding: { brandColor: '#4d6bff' } } });
+      window.Cal.ns.demo('on', { action: 'linkReady', callback: function () { box.classList.add('is-ready'); } });
+      window.Cal.ns.demo('on', { action: 'linkFailed', callback: fail });
+      // belt and braces: the iframe arriving is enough to drop the skeleton
+      new MutationObserver(function () { if (box.querySelector('iframe')) box.classList.add('is-ready'); }).observe(box, { childList: true, subtree: true });
+      setTimeout(function () { if (!box.querySelector('iframe')) fail(); }, 15000);
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) start(); }); }, { rootMargin: '600px 0px' }).observe(box);
+    } else start();
   }
 
   /* ---------- demo form: FormSubmit AJAX with a mailto fallback (same endpoint as the current site) ---------- */

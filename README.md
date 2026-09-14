@@ -58,7 +58,7 @@ node serve.js          # then open http://localhost:8080/v2/
 | `site/v2/index.html` | the page (hand-written, readable HTML) |
 | `site/v2/v2.css`     | design system + layout + motion states; dark tokens for the product demos |
 | `site/v2/v2.js`      | Lenis smooth scroll, header/pill states, hero intro, scroll reveals, scroll-linked statement, sticky "how it works" stage, the proof "duel" (one typed question, a chatbot bubble vs a proof ladder, auto-advancing tabs), the security panel with the network plug, canvases, film player, FAQ accordion, form |
-| `site/v2/media/`     | the product film: `sentinel-demo.mp4` (H.264, 1080p, 51 s, ~11 MB), `sentinel-demo.webm` (VP9, ~9 MB), `sentinel-demo-poster.jpg` |
+| `site/v2/media/`     | the product film: `sentinel-demo.mp4` (H.264, 1080p, 60 fps, 50 s, ~12 MB), `sentinel-demo.webm` (VP9, ~11 MB), `sentinel-demo-poster.jpg` |
 
 Section order: hero → statement → how it works → proof → security → **film**
 (the recorded product demonstration, click to play, no sound) → **FAQ** →

@@ -448,6 +448,26 @@ img, svg { display: block; max-width: 100%; }
 .form-success h3 { font-size: 20px; font-weight: 590; letter-spacing: -0.012em; margin-bottom: 8px; }
 .form-success p { color: var(--muted); }
 
+/* ---------- book a call: Cal.com inline, lazy-loaded when the block is near ---------- */
+.call { margin-top: 64px; display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 48px; padding: 36px; border: 1px solid var(--line); border-radius: 22px; background: linear-gradient(180deg, var(--bg-1), var(--bg)); position: relative; overflow: hidden; }
+.call::before { content: ""; position: absolute; left: -10%; top: -60%; width: 46%; height: 160%; pointer-events: none; background: radial-gradient(closest-side, rgba(26, 47, 230, 0.18), transparent); }
+.call-copy { position: relative; display: flex; flex-direction: column; gap: 18px; align-self: start; }
+.call-h { font-size: clamp(28px, 2.6vw, 36px); line-height: 1.05; letter-spacing: -0.022em; font-weight: 510; margin-top: 4px; }
+.call-copy > p { font-size: 15px; line-height: 1.55; color: var(--muted); max-width: 340px; }
+.call-facts { display: flex; flex-direction: column; gap: 10px; padding-top: 6px; }
+.call-facts li { position: relative; padding-left: 22px; font-size: 14px; line-height: 1.45; color: var(--fg-2); }
+.call-facts li::before { content: ""; position: absolute; left: 0; top: 7px; width: 12px; height: 6px; border-left: 1.6px solid var(--ok); border-bottom: 1.6px solid var(--ok); transform: rotate(-45deg); }
+.call-ext { margin-top: 8px; }
+.call-ext svg { width: 13px; height: 13px; }
+.call-cal { position: relative; min-height: 640px; border-radius: 16px; overflow: hidden; background: #0b0c0e; border: 1px solid var(--line); }
+.call-cal iframe { display: block; width: 100%; border: 0; }
+.call-skel { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 12px; font: 400 13px/1 var(--mono); color: var(--muted); background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0 1px, transparent 1px 44px), repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0 1px, transparent 1px 44px); transition: opacity 0.4s var(--eo-quad); }
+.call-cal.is-ready .call-skel { opacity: 0; pointer-events: none; }
+.call-spin { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid var(--line-3); border-top-color: var(--cobalt-3); animation: spin 0.9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.call-fallback { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-align: center; color: var(--muted); }
+.call-fallback[hidden] { display: none; }
+
 /* ---------- footer ---------- */
 .footer { margin-top: 200px; border-top: 1px solid var(--line); padding: 56px 0 40px; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
@@ -496,6 +516,7 @@ img, svg { display: block; max-width: 100%; }
   .split-head { grid-template-columns: 1fr; align-items: start; }
   .split-head p { justify-self: start; }
   .trio, .cta-grid, .faq-grid { grid-template-columns: 1fr; }
+  .call { grid-template-columns: 1fr; gap: 32px; }
   .cta-grid, .faq-grid { gap: 40px; }
   .field-panel { height: 480px; }
   .node { width: 140px; }
@@ -629,6 +650,8 @@ img, svg { display: block; max-width: 100%; }
   .proof-panel { padding: 72px 16px 48px; }
   .duel { margin-top: 32px; }
   .cta-grid, .faq-grid { gap: 56px; }
+  .call { grid-template-columns: 1fr; gap: 28px; padding: 22px; margin-top: 48px; border-radius: 18px; }
+  .call-cal { min-height: 560px; }
   .film { margin-top: 44px; }
   .trio { margin-top: 56px; gap: 40px; }
   .field-panel { margin-top: 48px; }

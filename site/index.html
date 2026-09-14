@@ -3,9 +3,47 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sentinel — Attack the contract before the other side does</title>
-<meta name="description" content="Sentinel hunts for the loopholes, contradictions and impossible terms a read-through misses, and proves every one with the exact clause. Runs on your own machines.">
-<link rel="icon" href="/favicon.ico">
+<title>Sentinel — Adversarial contract review that proves every finding</title>
+<meta name="description" content="Sentinel reads a contract like opposing counsel: it hunts for loopholes, contradictions and impossible terms, plays the contract forward, and proves every finding with the exact clause. Runs on your own machines, fully offline.">
+<link rel="canonical" href="https://www.sentinel.law/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#08090a">
+<meta name="color-scheme" content="dark">
+<meta name="author" content="Sentinel">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sentinel">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://www.sentinel.law/">
+<meta property="og:title" content="Sentinel — Attack the contract before the other side does">
+<meta property="og:description" content="Adversarial contract review that finds how a contract breaks and proves it, clause by clause. On-premise or air-gapped.">
+<meta property="og:image" content="https://www.sentinel.law/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sentinel — attack the contract before the other side does">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sentinel — Attack the contract before the other side does">
+<meta name="twitter:description" content="Adversarial contract review that finds how a contract breaks and proves it, clause by clause. On-premise or air-gapped.">
+<meta name="twitter:image" content="https://www.sentinel.law/og.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="512x512" href="/icons/icon-512.png">
+<link rel="apple-touch-icon" href="/icons/icon-180.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"https://www.sentinel.law/#org","name":"Sentinel","url":"https://www.sentinel.law/","logo":"https://www.sentinel.law/icons/icon-512.png","email":"leo@sentinel-lai.com"},
+ {"@type":"WebSite","@id":"https://www.sentinel.law/#site","url":"https://www.sentinel.law/","name":"Sentinel","publisher":{"@id":"https://www.sentinel.law/#org"}},
+ {"@type":"SoftwareApplication","name":"Sentinel","applicationCategory":"BusinessApplication","operatingSystem":"On-premise (Linux, Docker)","url":"https://www.sentinel.law/","description":"Adversarial contract review: a deterministic engine reads every clause, plays the contract forward against scenarios, and proves each finding with the clause, the scenario and a replayable trace. Delivers a cited memorandum as PDF or DOCX.","featureList":["Detection of loopholes, contradictions and impossible terms","What-if simulation of the contract against scenarios","Clause-cited memorandum in PDF and DOCX","On-premise or air-gapped deployment","English and Russian interface"],"publisher":{"@id":"https://www.sentinel.law/#org"}},
+ {"@type":"VideoObject","name":"Sentinel product demonstration","description":"Upload, parse, detect, simulate and hand over the memorandum: the Sentinel interface on one agreement, in fifty seconds.","thumbnailUrl":"https://www.sentinel.law/v2/media/sentinel-demo-poster.jpg","contentUrl":"https://www.sentinel.law/v2/media/sentinel-demo.mp4","uploadDate":"2026-09-14","duration":"PT50S"},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Does Sentinel use a language model?","acceptedAnswer":{"@type":"Answer","text":"Not to find or prove a finding. Findings come from a deterministic engine that reads the clauses and plays the contract forward. A language model is used only to talk with you about the results."}},
+  {"@type":"Question","name":"How is a finding proven?","acceptedAnswer":{"@type":"Answer","text":"Each one carries the clause it comes from, the scenario that triggers it, and a replayable trace. You can check every step yourself."}},
+  {"@type":"Question","name":"Where does it run, and what leaves the building?","acceptedAnswer":{"@type":"Answer","text":"On your own machines, fully offline if you need it. No contract, clause or finding leaves your network."}},
+  {"@type":"Question","name":"Which formats and languages?","acceptedAnswer":{"@type":"Answer","text":"PDF and DOCX in, a memorandum in PDF or DOCX out. The interface is available in English and Russian."}},
+  {"@type":"Question","name":"What does the memorandum contain?","acceptedAnswer":{"@type":"Answer","text":"Every finding, ranked by exposure, with its citation and a redline. The page, the PDF and the DOCX are the same document."}},
+  {"@type":"Question","name":"Can we run it on our own playbook?","acceptedAnswer":{"@type":"Answer","text":"Yes. Stance-based redlines and custom playbooks tell the engine which side you are on and what you will not accept."}},
+  {"@type":"Question","name":"How do we start?","acceptedAnswer":{"@type":"Answer","text":"A 15-minute walkthrough on one of your own agreements. Bring a tricky clause."}}
+ ]}
+]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
@@ -317,15 +355,15 @@
       </div>
       <div class="film" id="film-box" data-reveal style="--d:.15s">
         <div class="film-screen">
-          <video class="film-video" id="filmVideo" playsinline preload="metadata" poster="/v2/media/sentinel-demo-poster.jpg" aria-label="Sentinel product demonstration, 51 seconds, no sound">
-            <source src="/v2/media/sentinel-demo.webm" type="video/webm">
+          <video class="film-video" id="filmVideo" playsinline preload="metadata" poster="/v2/media/sentinel-demo-poster.jpg" aria-label="Sentinel product demonstration, 50 seconds, no sound">
             <source src="/v2/media/sentinel-demo.mp4" type="video/mp4">
+            <source src="/v2/media/sentinel-demo.webm" type="video/webm">
           </video>
           <div class="film-progress" aria-hidden="true"><i id="filmBar"></i></div>
           <button class="film-poster" id="filmPoster" type="button">
             <span class="poster-copy"><span class="eyebrow">Watch</span><span class="poster-title">Sentinel breaks a contract<br>in fifty seconds.</span></span>
             <span class="play" aria-hidden="true"><span class="play-ring"></span><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
-            <span class="film-dur">0:51 · no sound</span>
+            <span class="film-dur">0:50 · no sound</span>
           </button>
           <button class="film-resume" id="filmResume" type="button" aria-label="Resume" hidden><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
           <div class="film-end" id="filmEnd" hidden>
@@ -384,6 +422,30 @@
         <div class="form-success" id="demoSuccess" role="status">
           <h3>Thanks, you’re on the list.</h3>
           <p>We’ll reach out within one business day to set up your walkthrough.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="call" id="call" data-reveal style="--d:.1s">
+        <div class="call-copy">
+          <div class="eyebrow">Or book a call</div>
+          <h3 class="call-h">Pick a slot.<br>Skip the form.</h3>
+          <p>Thirty minutes with the founders, on a day and time that suits you. Bring a tricky clause and we’ll run it live.</p>
+          <ul class="call-facts">
+            <li>30 minutes, video call</li>
+            <li>Your contract, if you want it reviewed on the spot</li>
+            <li>Confirmation and calendar invite straight away</li>
+          </ul>
+          <a class="link-arrow call-ext" href="https://cal.com/sentinel-ai/demo" target="_blank" rel="noopener">Open in Cal.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+        <div class="call-cal" id="calInline" aria-label="Booking calendar">
+          <div class="call-skel" id="calSkel"><span class="call-spin" aria-hidden="true"></span>Loading the calendar…</div>
+          <div class="call-fallback" id="calFallback" hidden>
+            <p>The calendar could not load here.</p>
+            <a class="btn" href="https://cal.com/sentinel-ai/demo" target="_blank" rel="noopener">Book on Cal.com</a>
+          </div>
         </div>
       </div>
     </div>

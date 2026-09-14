@@ -2,7 +2,12 @@
 
 `site/v2/media/sentinel-demo.{mp4,webm}` and its poster are recorded from the real
 interface (`../../../interface`) by `record.mjs`, a Playwright script that drives
-headless Edge and captures 1920×1080 frames over CDP. Nothing in the take spends
+headless Edge and captures one 1920×1080 frame per 1/60 s. The page runs on a
+virtual clock (timers, requestAnimationFrame and every CSS animation/transition are
+stepped exactly one frame at a time), so the film is smooth no matter how long a
+frame takes to render. The interface is dressed in the landing page's own demo
+tokens, the rail shows Simulate and Stress, and the memorandum types and wipes
+itself in with a seal, like the landing's report demo. Nothing in the take spends
 credits: the upload and the detection run are **replayed** — the upload is answered
 by a mocked route, the analysis events come from `run_findings.json` (the 21
 findings of the fixture's stored run), and every other API call is either a
@@ -23,7 +28,7 @@ spend is unchanged at the end.
 
 ```bash
 node record.mjs dry      # no capture: a screenshot per beat in ./dry + ./dry/requests.txt
-node record.mjs take     # capture: frames in ./take + take/frames.txt
+node record.mjs take     # capture: frames in ./take2, one per 1/60 s
 bash encode.sh           # -> out/sentinel-demo.mp4, .webm, -poster.jpg
 ```
 
