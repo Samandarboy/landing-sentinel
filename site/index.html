@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sentinel — Adversarial contract review that proves every finding</title>
-<meta name="description" content="Sentinel reads a contract like opposing counsel: it hunts for loopholes, contradictions and impossible terms, plays the contract forward, and proves every finding with the exact clause. Runs on your own machines, fully offline.">
+<meta name="description" content="Sentinel reads a contract like opposing counsel: it hunts for loopholes, contradictions and impossible terms, plays the contract forward, and cites every finding to the exact clause. A memo in minutes.">
 <link rel="canonical" href="https://www.sentinel.law/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#08090a">
@@ -15,42 +15,55 @@
 <meta property="og:locale" content="en_GB">
 <meta property="og:url" content="https://www.sentinel.law/">
 <meta property="og:title" content="Sentinel — Attack the contract before the other side does">
-<meta property="og:description" content="Adversarial contract review that finds how a contract breaks and proves it, clause by clause. On-premise or air-gapped.">
+<meta property="og:description" content="Adversarial contract review that finds how a contract breaks and proves it, clause by clause.">
 <meta property="og:image" content="https://www.sentinel.law/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Sentinel — attack the contract before the other side does">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sentinel — Attack the contract before the other side does">
-<meta name="twitter:description" content="Adversarial contract review that finds how a contract breaks and proves it, clause by clause. On-premise or air-gapped.">
+<meta name="twitter:description" content="Adversarial contract review that finds how a contract breaks and proves it, clause by clause.">
 <meta name="twitter:image" content="https://www.sentinel.law/og.png">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="512x512" href="/icons/icon-512.png">
 <link rel="apple-touch-icon" href="/icons/icon-180.png">
+<script>
+/* the hero waits for its timeline; if the scripts never arrive, show it anyway */
+document.documentElement.classList.add('js');
+setTimeout(function () { document.documentElement.classList.add('ready'); }, 3500);
+</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"Organization","@id":"https://www.sentinel.law/#org","name":"Sentinel","url":"https://www.sentinel.law/","logo":"https://www.sentinel.law/icons/icon-512.png","email":"leo@sentinel-lai.com"},
  {"@type":"WebSite","@id":"https://www.sentinel.law/#site","url":"https://www.sentinel.law/","name":"Sentinel","publisher":{"@id":"https://www.sentinel.law/#org"}},
- {"@type":"SoftwareApplication","name":"Sentinel","applicationCategory":"BusinessApplication","operatingSystem":"On-premise (Linux, Docker)","url":"https://www.sentinel.law/","description":"Adversarial contract review: a deterministic engine reads every clause, plays the contract forward against scenarios, and proves each finding with the clause, the scenario and a replayable trace. Delivers a cited memorandum as PDF or DOCX.","featureList":["Detection of loopholes, contradictions and impossible terms","What-if simulation of the contract against scenarios","Clause-cited memorandum in PDF and DOCX","On-premise or air-gapped deployment","English and Russian interface"],"publisher":{"@id":"https://www.sentinel.law/#org"}},
- {"@type":"VideoObject","name":"Sentinel product demonstration","description":"Upload, parse, detect, simulate and hand over the memorandum: the Sentinel interface on one agreement, in fifty seconds.","thumbnailUrl":"https://www.sentinel.law/v2/media/sentinel-demo-poster.jpg","contentUrl":"https://www.sentinel.law/v2/media/sentinel-demo.mp4","uploadDate":"2026-09-14","duration":"PT50S"},
+ {"@type":"SoftwareApplication","name":"Sentinel","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.sentinel.law/","description":"Adversarial contract review: Sentinel reads every clause, checks each fact against the text of the contract, plays the contract forward against scenarios, and cites every finding to its clause. Delivers a memo as PDF or DOCX.","featureList":["Detection of loopholes, contradictions and impossible terms","Simulation of the contract against scenarios","Clause-cited memo in PDF and DOCX","A memo written for the party you choose","Training consent off by default, with a per-account audit trail","English and Russian interface"],"publisher":{"@id":"https://www.sentinel.law/#org"}},
+ {"@type":"VideoObject","name":"Sentinel product demonstration","description":"Upload, parse, detect, simulate and hand over the memo: the Sentinel interface on one sample agreement, in fifty seconds.","thumbnailUrl":"https://www.sentinel.law/v2/media/sentinel-demo-poster.jpg","contentUrl":"https://www.sentinel.law/v2/media/sentinel-demo.mp4","uploadDate":"2026-09-14","duration":"PT50S"},
  {"@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":"Does Sentinel use a language model?","acceptedAnswer":{"@type":"Answer","text":"Not to find or prove a finding. Findings come from a deterministic engine that reads the clauses and plays the contract forward. A language model is used only to talk with you about the results."}},
-  {"@type":"Question","name":"How is a finding proven?","acceptedAnswer":{"@type":"Answer","text":"Each one carries the clause it comes from, the scenario that triggers it, and a replayable trace. You can check every step yourself."}},
-  {"@type":"Question","name":"Where does it run, and what leaves the building?","acceptedAnswer":{"@type":"Answer","text":"On your own machines, fully offline if you need it. No contract, clause or finding leaves your network."}},
-  {"@type":"Question","name":"Which formats and languages?","acceptedAnswer":{"@type":"Answer","text":"PDF and DOCX in, a memorandum in PDF or DOCX out. The interface is available in English and Russian."}},
-  {"@type":"Question","name":"What does the memorandum contain?","acceptedAnswer":{"@type":"Answer","text":"Every finding, ranked by exposure, with its citation and a redline. The page, the PDF and the DOCX are the same document."}},
-  {"@type":"Question","name":"Can we run it on our own playbook?","acceptedAnswer":{"@type":"Answer","text":"Yes. Stance-based redlines and custom playbooks tell the engine which side you are on and what you will not accept."}},
-  {"@type":"Question","name":"How do we start?","acceptedAnswer":{"@type":"Answer","text":"A 15-minute walkthrough on one of your own agreements. Bring a tricky clause."}}
+  {"@type":"Question","name":"Can’t I just paste the contract into ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"You can, and it will answer with confidence. It won’t show you the clause, play the scenario, or stand behind the answer. Sentinel shows its working: the words that break, the situation that breaks them, and every step in between."}},
+  {"@type":"Question","name":"Does Sentinel use AI?","acceptedAnswer":{"@type":"Answer","text":"Yes, to read, and never on trust. Every fact the model takes from your contract must carry a quote, and the quote is checked against the document. What can’t be found in the text is discarded. A second pass can remove a finding but never add one."}},
+  {"@type":"Question","name":"What if Sentinel is wrong?","acceptedAnswer":{"@type":"Answer","text":"Then you’ll see exactly where. Every finding points to its clause and shows the steps that led to it, so a bad one takes seconds to dismiss. You are never asked to take its word for it."}},
+  {"@type":"Question","name":"What does it catch that a careful lawyer misses?","acceptedAnswer":{"@type":"Answer","text":"Interactions. A liability cap in § 9 that a free pilot in § 3 quietly sets to zero. A defined term that points to an empty schedule. People read clauses one at a time. Sentinel reads them against each other, then plays them forward."}},
+  {"@type":"Question","name":"Will it replace my lawyers?","acceptedAnswer":{"@type":"Answer","text":"No. It replaces the read-through nobody has time for. Sentinel finds and cites; your lawyers decide what to do about it. It is decision support, not legal advice."}},
+  {"@type":"Question","name":"Whose side is it on?","acceptedAnswer":{"@type":"Answer","text":"The side you pick. Choose the party the memo is written for and every risk is re-scored from that chair: against you, in your favour, or cutting both ways, ordered by what to fix first. Or choose neither and get just the facts."}},
+  {"@type":"Question","name":"How long does a contract take?","acceptedAnswer":{"@type":"Answer","text":"A few minutes for a typical agreement, from upload to a ranked list of findings. The memo is built from the same findings, so it is ready when they are."}},
+  {"@type":"Question","name":"What happens to our contracts?","acceptedAnswer":{"@type":"Answer","text":"They stay yours. Sentinel doesn’t train on them unless you switch that on, and it is off by default. Delete a contract and the file, the findings, the memo and every export go with it. Every run is logged."}},
+  {"@type":"Question","name":"Which formats and languages?","acceptedAnswer":{"@type":"Answer","text":"PDF, DOCX or plain text in. The memo comes out as a page, a PDF or a DOCX, and all three are the same document. The interface runs in English and Russian."}},
+  {"@type":"Question","name":"How do we start?","acceptedAnswer":{"@type":"Answer","text":"With a 20-minute call. Bring a contract you already know is tricky and watch what Sentinel does with it."}}
  ]}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/landing/sentinel-demo.css">
 <link rel="stylesheet" href="/v2/v2.css">
 </head>
 <body>
+
+<canvas id="swarm" aria-hidden="true"></canvas>
+<div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
 
 <header class="header" id="header">
   <div class="header-inner">
@@ -62,12 +75,12 @@
       <a href="#product">Product</a>
       <a href="#how">How it works</a>
       <a href="#proof">Proof</a>
-      <a href="#security">Security</a>
+      <a href="#why">Why Sentinel</a>
       <a href="#film">Watch</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="header-right">
-      <a class="btn btn-sm" href="#demo">Book a demo</a>
+      <a class="btn btn-sm" href="#demo" data-magnetic>Book a demo</a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -83,19 +96,20 @@
   <nav class="nav">
     <a href="#how">How it works</a>
     <a href="#proof">Proof</a>
-    <a href="#security">Security</a>
+    <a href="#why">Why Sentinel</a>
+    <a href="#faq">FAQ</a>
   </nav>
   <a class="btn btn-sm" href="#demo">Book a demo</a>
 </div>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#product">Product</a>
-  <a href="#how">How it works</a>
-  <a href="#proof">Proof</a>
-  <a href="#security">Security</a>
-  <a href="#film">Watch</a>
-  <a href="#faq">FAQ</a>
-  <a class="btn" href="#demo">Book a demo</a>
+  <a href="#product" style="--i:0">Product</a>
+  <a href="#how" style="--i:1">How it works</a>
+  <a href="#proof" style="--i:2">Proof</a>
+  <a href="#why" style="--i:3">Why Sentinel</a>
+  <a href="#film" style="--i:4">Watch</a>
+  <a href="#faq" style="--i:5">FAQ</a>
+  <a class="btn" href="#demo" style="--i:6">Book a demo</a>
 </div>
 
 <main id="top">
@@ -104,123 +118,133 @@
   <section class="hero" id="product">
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="container hero-inner">
-      <h1 class="h1 hero-title">Attack the contract before the other side does.</h1>
+      <h1 class="h1 hero-title" id="heroTitle">Attack the contract before the other side does.</h1>
       <div class="hero-row">
         <div class="hero-left">
-          <p class="hero-lede">Sentinel hunts for the loopholes, contradictions and impossible terms a read-through misses, then proves each one with the exact clause.</p>
-          <div class="hero-ctas">
-            <a class="btn" href="#demo">Book a demo</a>
+          <p class="hero-lede" data-text="lines" data-manual>Sentinel hunts for the loopholes, contradictions and impossible terms a <span class="nb">read-through</span> misses, then proves each one with the exact clause.</p>
+          <div class="hero-ctas" data-stagger data-manual>
+            <a class="btn" href="#demo" data-magnetic>Book a demo</a>
             <a class="link-arrow" href="#how">See how it works
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
           </div>
         </div>
-        <div class="hero-facts">On-premise or air-gapped<br>No data leaves your building<br>Every finding cited to its clause</div>
+        <div class="hero-facts"><span>Every finding cited to its clause</span><span>Every fact checked against your text</span><span>A memo in minutes</span></div>
       </div>
     </div>
     <div class="frame-wrap" id="heroFrame">
       <div class="frame">
         <div class="frame-demo"><div class="sd-demo" data-demo="detect" aria-label="Sentinel detecting findings in a contract"></div></div>
         <div class="grain" aria-hidden="true"></div>
+        <div class="frame-edge" aria-hidden="true"></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ STATEMENT + CARDS ============ -->
+  <!-- ============ STATEMENT + THREE PILLARS ============ -->
   <section class="statement-sec">
+    <div class="container statement-grid">
+      <p class="statement" id="statement"><span class="lead"><span class="lw">Most legal AI</span> <span class="lw st-strike">summarizes.</span> <span class="lw">Sentinel</span> <span class="lw st-hot">attacks.</span></span> <span class="rest">It reads your contract like opposing counsel, finds every way the deal turns against you, and points to the exact clause.</span></p>
+      <div class="swarm-anchor swarm-doc" id="swarmDoc" aria-hidden="true"></div>
+    </div>
+
     <div class="container">
-      <p class="statement" id="statement"><span class="lead">Most legal AI summarizes. Sentinel attacks.</span><br class="lb"> <span class="rest">It reads your contract like opposing counsel,<br class="lb"> finds every way the deal turns against you,<br class="lb"> and points to the exact clause.</span></p>
-
-      <div class="cards">
-        <article class="card" data-reveal style="--d:0s">
-          <div class="card-art" aria-hidden="true">
-            <svg viewBox="0 0 320 200" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-              <defs><linearGradient id="beamG" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff9f43" stop-opacity="0"/><stop offset=".5" stop-color="#ff9f43" stop-opacity=".4"/><stop offset="1" stop-color="#ff9f43" stop-opacity="0"/></linearGradient></defs>
-              <rect x="70" y="22" width="122" height="156" rx="8"/>
-              <path d="M90 50h82M90 66h62M90 82h82M90 98h50M90 114h82M90 130h58M90 146h74"/>
-              <path class="art-flag" d="M90 82h82" stroke="#ff5f57" stroke-width="2"/>
-              <path class="art-flag d2" d="M90 130h58" stroke="#ff9f43" stroke-width="2"/>
-              <rect class="art-beam" x="60" y="20" width="142" height="20" rx="4" fill="url(#beamG)" stroke="none"/>
-              <path d="M172 82h48" stroke-dasharray="3 5"/>
-              <circle cx="246" cy="82" r="22"/><circle cx="246" cy="82" r="3" fill="currentColor" stroke="none"/>
-              <path d="M246 52v10M246 102v10M216 82h10M266 82h10"/>
-            </svg>
+      <div class="pillars" id="pillars">
+        <article class="pillar" data-reveal style="--d:0s">
+          <div class="scene scene-find" data-scene="find" aria-hidden="true">
+            <div class="sf-page">
+              <i class="sf-h"></i>
+              <i class="sf-l" style="--w:92%"></i>
+              <i class="sf-l" style="--w:78%"></i>
+              <i class="sf-l is-flag f1" style="--w:86%"></i>
+              <i class="sf-l" style="--w:64%"></i>
+              <i class="sf-l is-flag f2" style="--w:90%"></i>
+              <i class="sf-l" style="--w:72%"></i>
+              <i class="sf-l" style="--w:84%"></i>
+              <i class="sf-l is-flag f3" style="--w:58%"></i>
+              <i class="sf-l" style="--w:80%"></i>
+              <span class="sf-beam"></span>
+            </div>
+            <ul class="sf-tags">
+              <li class="sf-tag f1"><i></i>Loophole</li>
+              <li class="sf-tag f2"><i></i>Contradiction</li>
+              <li class="sf-tag f3"><i></i>Impossible term</li>
+            </ul>
+            <div class="sf-count"><b>0</b><span>findings</span></div>
           </div>
-          <h3>Built to attack, not autocomplete</h3>
-          <p>Reads every clause the way the other side will. Hunts for loopholes, contradictions and terms that can’t both be true.</p>
+          <span class="pillar-k">01 · Find</span>
+          <h3>Finds what a read-through misses.</h3>
+          <p>Loopholes, contradictions and terms that can’t both be true.</p>
         </article>
 
-        <article class="card" data-reveal style="--d:.1s">
-          <div class="card-art" aria-hidden="true">
-            <svg viewBox="0 0 320 200" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="28" y="30" width="152" height="64" rx="8"/>
-              <rect x="42" y="44" width="34" height="12" rx="6" stroke="#ff5f57"/>
-              <path d="M84 50h60M42 70h100M42 82h72"/>
-              <path class="art-dash" d="M180 62h34c12 0 18 6 18 18v10c0 12 6 18 18 18h12" stroke-dasharray="4 6"/>
-              <rect x="200" y="96" width="92" height="76" rx="8"/>
-              <text x="212" y="116" font-family="IBM Plex Mono, monospace" font-size="10" fill="currentColor" stroke="none">§ 7.2</text>
-              <rect x="212" y="138" width="50" height="9" rx="2" fill="rgba(255,214,102,.28)" stroke="none"/>
-              <path d="M212 130h68M212 142h50M212 154h68"/>
-              <path d="M60 134V94" stroke-dasharray="3 5"/>
-              <circle cx="60" cy="150" r="16"/><path d="M52 150l6 6 11-12" stroke="#2fd27f" stroke-width="2"/>
-            </svg>
+        <article class="pillar" data-reveal style="--d:.1s">
+          <div class="scene scene-prove" data-scene="prove" aria-hidden="true">
+            <div class="sp-find"><span class="sp-sev"></span>Liability cap is $0 in the pilot</div>
+            <svg class="sp-wire" viewBox="0 0 60 62" fill="none"><path d="M6 0v34c0 8 5 13 13 13h33"/><circle r="2.6" cx="6" cy="0"/></svg>
+            <div class="sp-clause"><span class="sp-ref">§ 9.2</span><p>“…shall not exceed <mark>the fees paid</mark> in the twelve months preceding the claim.”</p></div>
+            <span class="sp-stamp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>Proven</span>
           </div>
-          <h3>Proof, not opinions</h3>
-          <p>Every finding comes with the clause, the scenario that triggers it and the redline that fixes it.</p>
+          <span class="pillar-k">02 · Prove</span>
+          <h3>Proves it with the clause.</h3>
+          <p>Every finding points to the exact words it rests on.</p>
         </article>
 
-        <article class="card" data-reveal style="--d:.2s">
-          <div class="card-art" aria-hidden="true">
-            <svg viewBox="0 0 320 200" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="30" y="20" width="260" height="160" rx="16" stroke-dasharray="4 6"/>
-              <rect x="110" y="56" width="100" height="100" rx="4"/>
-              <path d="M110 156h100M126 76h12M150 76h12M174 76h12M126 96h12M150 96h12M174 96h12M126 116h12M150 116h12M174 116h12M150 136h20v20h-20z"/>
-              <rect x="236" y="122" width="26" height="20" rx="4"/><path d="M241 122v-6a8 8 0 0 1 16 0v6"/>
-              <path d="M210 92h58" stroke-dasharray="3 5"/>
-              <path d="M284 84l14 16M298 84l-14 16" stroke="#ff5f57" stroke-width="1.5"/>
-              <circle class="art-pulse" cx="70" cy="70" r="3" fill="currentColor" stroke="none"/>
-              <circle class="art-pulse" cx="62" cy="130" r="3" fill="currentColor" stroke="none" style="animation-delay:.9s"/>
-              <circle class="art-pulse" cx="250" cy="52" r="3" fill="currentColor" stroke="none" style="animation-delay:1.7s"/>
-            </svg>
+        <article class="pillar" data-reveal style="--d:.2s">
+          <div class="scene scene-fix" data-scene="fix" aria-hidden="true">
+            <div class="sx-doc"><span class="sx-ref">§ 9.2</span><p>Liability shall not exceed <del>the fees paid</del> <ins></ins><span class="sx-caret"></span></p></div>
+            <div class="sx-bar"><span class="sx-chip">Redline</span><span class="sx-status">drafting…</span><span class="sx-copy">Copy</span></div>
           </div>
-          <h3>Stays in your building</h3>
-          <p>On-premise or air-gapped. No contract, clause or finding ever leaves your network.</p>
+          <span class="pillar-k">03 · Fix</span>
+          <h3>Hands you the redline.</h3>
+          <p>A fix for the finding, ready to paste into the draft.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ HOW IT WORKS (scroll-driven) ============ -->
+  <!-- ============ HOW IT WORKS (scroll-driven on desktop, a story you swipe on phones) ============ -->
   <section class="how" id="how">
     <div class="how-sticky container">
       <div class="how-steps">
-        <div class="eyebrow">How it works</div>
-        <h2 class="h2">Three passes over one contract.</h2>
+        <div class="eyebrow" data-text="label">How it works</div>
+        <h2 class="h2" data-text="words">Three passes over one contract.</h2>
+        <div class="story-bars" id="storyBars">
+          <button type="button" aria-label="Detect"><i></i></button>
+          <button type="button" aria-label="Simulate"><i></i></button>
+          <button type="button" aria-label="Report"><i></i></button>
+        </div>
         <ol class="steps" id="steps">
           <li class="step is-active" data-step="0">
             <span class="step-bar"><i></i></span>
             <span class="step-num">01 — DETECT</span>
             <h3>Find how it breaks.</h3>
-            <p>A ranked hit-list of loopholes, contradictions and impossible terms, each cited to its clause.</p>
+            <div class="step-body"><p>A ranked list of loopholes, contradictions and impossible terms, each cited to its clause.</p></div>
           </li>
           <li class="step" data-step="1">
             <span class="step-bar"><i></i></span>
             <span class="step-num">02 — SIMULATE</span>
             <h3>See how it plays out.</h3>
-            <p>Miss a payment. Blow a deadline. Walk away early. Sentinel plays it forward and shows where you’re exposed.</p>
+            <div class="step-body"><p>Miss a payment. Blow a deadline. Walk away early. Sentinel plays it forward and shows where you’re exposed.</p></div>
           </li>
           <li class="step" data-step="2">
             <span class="step-bar"><i></i></span>
             <span class="step-num">03 — REPORT</span>
             <h3>Get the memo.</h3>
-            <p>A plain-English memo with every finding, citation and redline. Export to PDF or DOCX.</p>
+            <div class="step-body"><p>A plain-English memo with every finding, citation and redline. Export to PDF or DOCX.</p></div>
           </li>
         </ol>
       </div>
-      <div class="stage" id="stage">
-        <div class="stage-panel is-active" data-index="0"><div class="sd-demo" data-demo="detect"></div></div>
-        <div class="stage-panel" data-index="1"><div class="sd-demo" data-demo="simulate"></div></div>
-        <div class="stage-panel" data-index="2"><div class="sd-demo" data-demo="report"></div></div>
+      <div class="stage-wrap">
+        <div class="stage" id="stage">
+          <div class="stage-panel is-active" data-index="0"><div class="sd-demo" data-demo="detect"></div></div>
+          <div class="stage-panel" data-index="1"><div class="sd-demo" data-demo="simulate"></div></div>
+          <div class="stage-panel" data-index="2"><div class="sd-demo" data-demo="report"></div></div>
+          <button class="story-nav prev" type="button" aria-label="Previous pass"></button>
+          <button class="story-nav next" type="button" aria-label="Next pass"></button>
+        </div>
+        <div class="story-hint" id="storyHint">Swipe or tap
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
       </div>
     </div>
   </section>
@@ -229,12 +253,12 @@
   <section class="proof" id="proof">
     <div class="proof-panel">
       <canvas class="stars" id="stars" aria-hidden="true"></canvas>
-      <div class="proof-head" data-reveal="blur">
-        <h2 class="h2">Ask a chatbot, and it answers.<br><span class="blue">Ask Sentinel, and it proves.</span></h2>
-        <p class="intro">Same question, two kinds of answer. Only one of them can be checked.</p>
+      <div class="proof-head">
+        <h2 class="h2" data-text="words">Ask a chatbot, and it answers.<br><span class="blue">Ask Sentinel, and it proves.</span></h2>
+        <p class="intro" data-text="lines" data-delay="0.65">Same question, two kinds of answer. Only one of them can be checked.</p>
       </div>
-      <div class="tabs-wrap" data-reveal style="--d:.1s">
-        <div class="tabs" role="tablist" id="tabs">
+      <div class="tabs-wrap">
+        <div class="tabs" role="tablist" id="tabs" data-stagger>
           <span class="tab-ind" aria-hidden="true"></span>
           <button class="tab is-active" role="tab" aria-selected="true" data-tab="0">Liability cap</button>
           <button class="tab" role="tab" aria-selected="false" data-tab="1">Termination</button>
@@ -249,34 +273,43 @@
           <span class="duel-q-text" id="duelQText"></span><span class="duel-caret" aria-hidden="true"></span>
         </div>
         <div class="duel-cols">
-          <article class="ans ans-bot" aria-live="polite">
-            <header class="ans-head"><span class="ans-avatar bot" aria-hidden="true">AI</span><span class="lbl">A chatbot</span><span class="ans-tag">answers</span></header>
+          <article class="ans ans-bot" id="ansBot" aria-live="polite">
+            <header class="ans-head"><span class="ans-avatar bot" aria-hidden="true">AI</span><span class="ans-name">A chatbot</span><span class="ans-tag"><span id="botTag">Answers</span></span></header>
             <div class="bubble" id="bubble">
               <span class="typing" aria-hidden="true"><i></i><i></i><i></i></span>
               <p class="bubble-text" id="bubbleText"></p>
             </div>
-            <ul class="receipt" id="receipt">
-              <li><span>Clause cited</span><b>none</b></li>
-              <li><span>Scenario played</span><b>none</b></li>
-              <li><span>Can you check it?</span><b>no</b></li>
+            <ul class="miss" id="miss">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>No clause</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>No scenario</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>No proof</li>
             </ul>
           </article>
-          <article class="ans ans-sen" aria-live="polite">
+          <article class="ans ans-sen" id="ansSen" aria-live="polite">
             <header class="ans-head">
               <span class="ans-avatar sen" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#f7f8f8"/><rect x="6" y="10.5" width="12" height="3" rx="1.5" fill="#08090a"/></svg></span>
-              <span class="lbl">Sentinel</span><span class="ans-tag proven">proves</span>
+              <span class="ans-name">Sentinel</span><span class="ans-tag"><span id="senTag">Proving</span></span>
             </header>
             <p class="verdict" id="verdict"></p>
-            <ol class="ladder" id="ladder">
-              <li class="rung"><span class="rung-tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="rung-k">Clause</span><span class="rung-v"></span></li>
-              <li class="rung"><span class="rung-tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="rung-k">Scenario</span><span class="rung-v"></span></li>
-              <li class="rung"><span class="rung-tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="rung-k">Trace</span><span class="rung-v"></span></li>
-            </ol>
-            <div class="fix" id="fix"><span class="chip-redline">Redline</span><span class="fix-text" id="fixText"></span></div>
+            <figure class="cite" id="cite"><span class="cite-ref" id="citeRef"></span><blockquote id="citeText"></blockquote></figure>
+            <div class="sim" id="sim">
+              <div class="sim-lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Played forward</div>
+              <div class="trace-wrap">
+                <i class="trace-head" aria-hidden="true"></i>
+                <ol class="trace" id="trace">
+                  <li><span class="trace-t"></span><b class="trace-v"></b></li>
+                  <li><span class="trace-t"></span><b class="trace-v"></b></li>
+                  <li><span class="trace-t"></span><b class="trace-v"></b></li>
+                </ol>
+              </div>
+            </div>
           </article>
         </div>
+        <button class="duel-next" id="duelNext" type="button">Next question
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
         <div class="duel-foot">
-          <span class="duel-outcome">One is a guess dressed as an answer. The other is a claim you can check in twenty seconds.</span>
+          <span class="duel-outcome">One is a guess dressed as an answer. The other is a claim you can check in seconds.</span>
           <a class="link-arrow" href="#how">See how it’s proven
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
@@ -286,62 +319,43 @@
     </div>
   </section>
 
-  <!-- ============ SECURITY ============ -->
-  <section class="security" id="security">
+  <!-- ============ WHY: what you walk away with ============ -->
+  <section class="control" id="why">
     <div class="container">
       <div class="split-head">
-        <h2 class="h2" data-reveal>Stays in your building.<br><span class="dim">Nothing leaves it.</span></h2>
-        <p data-reveal style="--d:.1s">Sentinel runs on your machines, fully offline if you need it. Pull the plug and it keeps working.</p>
+        <div>
+          <div class="eyebrow" data-text="label">Why Sentinel</div>
+          <h2 class="h2" data-text="words" style="margin-top:16px">What you walk away with.<br><span class="dim">Before they’ve finished reading.</span></h2>
+        </div>
+        <p data-text="lines" data-delay="0.45">One upload. A ranked list of what can hurt you, the leverage you didn’t know you had, and a memo you can send.</p>
       </div>
-      <div class="field-panel" id="fieldPanel" data-reveal style="--d:.15s">
-        <canvas id="dots" aria-hidden="true"></canvas>
-        <div class="perimeter" aria-hidden="true"><span id="perimeterLbl">Your network</span></div>
-        <div class="field-diagram">
-          <div class="node">
-            <div class="node-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg></div>
-            <div class="node-lbl">Your contracts</div>
-            <div class="node-sub">PDF · DOCX · CLM</div>
-          </div>
-          <div class="node-link" aria-hidden="true"></div>
-          <div class="node">
-            <div class="node-box"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#f7f8f8"/><rect x="6" y="10.5" width="12" height="3" rx="1.5" fill="#08090a"/></svg></div>
-            <div class="node-lbl">Sentinel</div>
-            <div class="node-sub">ON YOUR MACHINES</div>
-          </div>
-          <div class="node-link d2" aria-hidden="true"></div>
-          <div class="node">
-            <div class="node-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M8 10h8M8 14h5"/></svg></div>
-            <div class="node-lbl">Cited memo</div>
-            <div class="node-sub">PDF · DOCX</div>
-          </div>
+      <div class="vault" id="vault" data-reveal="scale" style="--d:.1s">
+        <canvas id="matrix" aria-hidden="true"></canvas>
+        <div class="ctls" id="ctls" data-stagger>
+          <button class="ctl is-active" type="button" data-ctl="0" aria-pressed="true">
+            <span class="ctl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>
+            <span class="ctl-txt"><b>Minutes, not days</b><small>From upload to a ranked list of what can hurt you.</small></span>
+            <i class="ctl-prog"></i>
+          </button>
+          <button class="ctl" type="button" data-ctl="1" aria-pressed="false">
+            <span class="ctl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/><path d="M12 1.8v3.4M12 18.8v3.4M1.8 12h3.4M18.8 12h3.4"/></svg></span>
+            <span class="ctl-txt"><b>Your exposure. And theirs.</b><small>Every risk scored for your side: against you, in your favour, or both.</small></span>
+            <i class="ctl-prog"></i>
+          </button>
+          <button class="ctl" type="button" data-ctl="2" aria-pressed="false">
+            <span class="ctl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 15l2 2 4-4"/></svg></span>
+            <span class="ctl-txt"><b>A memo you can send</b><small>Findings, citations and redlines in one document. PDF or DOCX.</small></span>
+            <i class="ctl-prog"></i>
+          </button>
         </div>
-        <div class="egress" aria-hidden="true">
-          <div class="egress-link">
-            <i class="egress-pkt"></i><i class="egress-pkt p2"></i>
-            <span class="egress-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
-          </div>
-          <div class="node node-out">
-            <div class="node-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.2 9.6 4.5 4.5 0 0 0 7 18z"/></svg></div>
-            <div class="node-lbl">The internet</div>
-            <div class="node-sub">0 bytes, ever</div>
-          </div>
-        </div>
-        <button class="plug" id="plug" type="button" aria-pressed="false">
-          <span class="plug-lbl">Network</span>
-          <span class="switch" aria-hidden="true"><i></i></span>
-          <span class="plug-state" id="plugState">Connected</span>
-        </button>
-        <p class="field-note" id="plugNote">Connected, and still nothing leaves: every outbound call is refused at your edge.</p>
-        <div class="field-hud" aria-hidden="true">
-          <span class="hud" id="hudOut"><b class="zero">0 B</b>out</span>
-          <span class="hud"><b>Local</b>model</span>
-          <span class="hud"><b>Yours</b>audit log</span>
-        </div>
+        <div class="matrix-space" id="matrixSpace" aria-hidden="true"></div>
+        <div class="readout" id="readout" aria-hidden="true"></div>
+        <span class="vault-tag" aria-hidden="true">Sample run</span>
       </div>
       <div class="trio">
-        <div data-reveal style="--d:0s"><h3>On-premise or air-gapped</h3><p>Deploy fully offline. Analysis needs no outbound call.</p></div>
-        <div data-reveal style="--d:.1s"><h3>SSO, SAML and access controls</h3><p>Granular roles, credit pools and a full audit trail for every run.</p></div>
-        <div data-reveal style="--d:.2s"><h3>Checkable by design</h3><p>Every finding carries its clause. Verify it in seconds.</p></div>
+        <div data-reveal style="--d:0s"><h3>No setup</h3><p>Upload a PDF or DOCX and run it. No playbook to write, nothing to train.</p></div>
+        <div data-reveal style="--d:.1s"><h3>Nothing taken on trust</h3><p>Every finding carries its clause. Check it in seconds.</p></div>
+        <div data-reveal style="--d:.2s"><h3>Your contracts stay yours</h3><p>Never used for training unless you switch it on. Delete one and everything made from it goes too.</p></div>
       </div>
     </div>
   </section>
@@ -350,19 +364,19 @@
   <section class="film-sec" id="film">
     <div class="container">
       <div class="split-head">
-        <h2 class="h2" data-reveal>Fifty seconds.<br><span class="dim">One contract, no cuts.</span></h2>
-        <p data-reveal style="--d:.1s">Upload, parse, detect, ask what-if, hand over the memorandum. The real interface, on one real agreement.</p>
+        <h2 class="h2" data-text="words">Fifty seconds.<br><span class="dim">One contract, start to finish.</span></h2>
+        <p data-text="lines" data-delay="0.45">Upload, parse, detect, simulate, hand over the memo. The real interface, on one sample agreement.</p>
       </div>
-      <div class="film" id="film-box" data-reveal style="--d:.15s">
-        <div class="film-screen">
+      <div class="film" id="film-box">
+        <div class="film-screen" id="filmScreen">
           <video class="film-video" id="filmVideo" playsinline preload="metadata" poster="/v2/media/sentinel-demo-poster.jpg" aria-label="Sentinel product demonstration, 50 seconds, no sound">
             <source src="/v2/media/sentinel-demo.mp4" type="video/mp4">
             <source src="/v2/media/sentinel-demo.webm" type="video/webm">
           </video>
           <div class="film-progress" aria-hidden="true"><i id="filmBar"></i></div>
           <button class="film-poster" id="filmPoster" type="button">
-            <span class="poster-copy"><span class="eyebrow">Watch</span><span class="poster-title">Sentinel breaks a contract<br>in fifty seconds.</span></span>
-            <span class="play" aria-hidden="true"><span class="play-ring"></span><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+            <span class="poster-copy"><span class="eyebrow">Watch</span><span class="poster-title">Watch Sentinel break<br>a contract.</span></span>
+            <span class="play" aria-hidden="true"><span class="play-ring"></span><span class="play-ring r2"></span><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
             <span class="film-dur">0:50 · no sound</span>
           </button>
           <button class="film-resume" id="filmResume" type="button" aria-label="Resume" hidden><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
@@ -371,28 +385,40 @@
             <div class="film-end-actions"><a class="btn" href="#demo">Book a demo</a><button class="btn btn-ghost" id="filmReplay" type="button">Watch again</button></div>
           </div>
         </div>
-        <p class="film-note">Recorded in the product on a sample agreement. The analysis is a replay of a completed run.</p>
+        <p class="film-note">Recorded in the product on a sample agreement. The analysis is replayed from a completed run; a live one takes a few minutes.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ FAQ ============ -->
+  <!-- ============ FAQ: a deck you drag, swipe or step through ============ -->
   <section class="faq-sec" id="faq">
-    <div class="container faq-grid">
-      <div class="faq-copy">
-        <div class="eyebrow" data-reveal>FAQ</div>
-        <h2 class="h2" data-reveal style="--d:.05s; margin-top:16px">Questions a careful buyer asks.</h2>
-        <p data-reveal style="--d:.1s">The worries left at the end of the page, answered in a sentence.</p>
+    <div class="container faq-head">
+      <div>
+        <div class="eyebrow" data-text="label">FAQ</div>
+        <h2 class="h2" data-text="words">The questions people actually ask.</h2>
       </div>
-      <div class="faq" data-reveal style="--d:.1s">
-        <details open><summary>Does Sentinel use a language model?<i></i></summary><div class="faq-a"><p>Not to find or prove a finding. Findings come from a deterministic engine that reads the clauses and plays the contract forward. A language model is used only to talk with you about the results.</p></div></details>
-        <details><summary>How is a finding “proven”?<i></i></summary><div class="faq-a"><p>Each one carries the clause it comes from, the scenario that triggers it, and a replayable trace. You can check every step yourself.</p></div></details>
-        <details><summary>Where does it run, and what leaves the building?<i></i></summary><div class="faq-a"><p>On your own machines, fully offline if you need it. No contract, clause or finding leaves your network.</p></div></details>
-        <details><summary>Which formats and languages?<i></i></summary><div class="faq-a"><p>PDF and DOCX in, a memorandum in PDF or DOCX out. The interface is available in English and Russian.</p></div></details>
-        <details><summary>What does the memorandum contain?<i></i></summary><div class="faq-a"><p>Every finding, ranked by exposure, with its citation and a redline. The page, the PDF and the DOCX are the same document.</p></div></details>
-        <details><summary>Can we run it on our own playbook?<i></i></summary><div class="faq-a"><p>Yes. Stance-based redlines and custom playbooks tell the engine which side you are on and what you will not accept.</p></div></details>
-        <details><summary>How do we start?<i></i></summary><div class="faq-a"><p>A 15-minute walkthrough on one of your own agreements. Bring a tricky clause.</p></div></details>
+      <div class="swarm-anchor swarm-q" id="swarmQ" aria-hidden="true"></div>
+      <div class="deck-ctrl" data-reveal style="--d:.1s">
+        <span class="deck-count"><b id="deckNow">01</b> / <span id="deckTotal">10</span></span>
+        <button class="deck-btn" id="deckPrev" type="button" aria-label="Previous question"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button class="deck-btn" id="deckNext" type="button" aria-label="Next question"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </div>
+    </div>
+    <div class="deck" id="deck" data-stagger tabindex="0" role="region" aria-label="Frequently asked questions, scroll sideways">
+      <article class="qa"><span class="qa-n">01</span><h3>Can’t I just paste the contract into ChatGPT?</h3><p>You can, and it will answer with confidence. It won’t show you the clause, play the scenario, or stand behind the answer. Sentinel shows its working: the words that break, the situation that breaks them, and every step in between.</p></article>
+      <article class="qa"><span class="qa-n">02</span><h3>Does Sentinel use AI?</h3><p>Yes, to read, and never on trust. Every fact the model takes from your contract must carry a quote, and the quote is checked against the document. What can’t be found in the text is discarded. A second pass can remove a finding but never add one.</p></article>
+      <article class="qa"><span class="qa-n">03</span><h3>What if Sentinel is wrong?</h3><p>Then you’ll see exactly where. Every finding points to its clause and shows the steps that led to it, so a bad one takes seconds to dismiss. You are never asked to take its word for it.</p></article>
+      <article class="qa"><span class="qa-n">04</span><h3>What does it catch that a careful lawyer misses?</h3><p>Interactions. A liability cap in § 9 that a free pilot in § 3 quietly sets to zero. A defined term that points to an empty schedule. People read clauses one at a time. Sentinel reads them against each other, then plays them forward.</p></article>
+      <article class="qa"><span class="qa-n">05</span><h3>Will it replace my lawyers?</h3><p>No. It replaces the read-through nobody has time for. Sentinel finds and cites; your lawyers decide what to do about it. It is decision support, not legal advice.</p></article>
+      <article class="qa"><span class="qa-n">06</span><h3>Whose side is it on?</h3><p>The side you pick. Choose the party the memo is written for and every risk is re-scored from that chair: against you, in your favour, or cutting both ways, ordered by what to fix first. Or choose neither and get just the facts.</p></article>
+      <article class="qa"><span class="qa-n">07</span><h3>How long does a contract take?</h3><p>A few minutes for a typical agreement, from upload to a ranked list of findings. The memo is built from the same findings, so it is ready when they are.</p></article>
+      <article class="qa"><span class="qa-n">08</span><h3>What happens to our contracts?</h3><p>They stay yours. Sentinel doesn’t train on them unless you switch that on, and it is off by default. Delete a contract and the file, the findings, the memo and every export go with it. Every run is logged.</p></article>
+      <article class="qa"><span class="qa-n">09</span><h3>Which formats and languages?</h3><p>PDF, DOCX or plain text in. The memo comes out as a page, a PDF or a DOCX, and all three are the same document. The interface runs in English and Russian.</p></article>
+      <article class="qa"><span class="qa-n">10</span><h3>How do we start?</h3><p>With a 20-minute call. Bring a contract you already know is tricky and watch what Sentinel does with it.</p></article>
+    </div>
+    <div class="container">
+      <div class="deck-bar" aria-hidden="true"><i id="deckBar"></i></div>
+      <div class="deck-hint" aria-hidden="true"><span><b id="deckNowM">01</b> / 10</span><span>Swipe</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
     </div>
   </section>
 
@@ -401,20 +427,20 @@
     <div class="container">
       <div class="split-head">
         <div>
-          <div class="eyebrow" data-reveal>Book a demo</div>
-          <h2 class="h2" data-reveal style="--d:.05s; margin-top:16px">See Sentinel break<br>a real contract.</h2>
+          <div class="eyebrow" data-text="label">Book a demo</div>
+          <h2 class="h2" data-text="words" style="margin-top:16px">See Sentinel break<br>a real contract.</h2>
         </div>
-        <p data-reveal style="--d:.1s">A 30-minute walkthrough on one of your own agreements. Pick a time below and we’ll show you where it breaks, clause by clause.</p>
+        <p data-text="lines" data-delay="0.45">A <span class="nb">20-minute</span> walkthrough on one of your own agreements. Pick a time below and we’ll show you where it breaks, clause by clause.</p>
       </div>
     </div>
     <div class="container">
       <div class="call" id="call" data-reveal style="--d:.1s">
-        <div class="call-copy">
+        <div class="call-copy" data-stagger>
           <div class="eyebrow">Pick a time</div>
-          <h3 class="call-h">Thirty minutes.<br>Your contract.</h3>
+          <h3 class="call-h">Twenty minutes.<br>Your contract.</h3>
           <p>A call with the founders on a day and time that suits you. Bring a tricky clause and we’ll run it live.</p>
           <ul class="call-facts">
-            <li>30 minutes, video call</li>
+            <li>20 minutes, video call</li>
             <li>Your contract, if you want it reviewed on the spot</li>
             <li>Confirmation and calendar invite straight away</li>
           </ul>
@@ -437,7 +463,7 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-grid" data-stagger>
       <div>
         <a class="brand" href="#top">
           <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#f7f8f8"/><rect x="6" y="10.5" width="12" height="3" rx="1.5" fill="#08090a"/></svg>
@@ -445,18 +471,23 @@
         </a>
         <p>Sentinel finds how your contract breaks, and proves it, clause by clause.</p>
       </div>
-      <div><h4>Product</h4><ul><li><a href="#how">How it works</a></li><li><a href="#proof">Proof</a></li><li><a href="#security">Security</a></li></ul></div>
-      <div><h4>Company</h4><ul><li><a href="#demo">Book a demo</a></li><li><a href="#demo">Contact</a></li></ul></div>
-      <div><h4>Legal</h4><ul><li><a href="/legal/terms-of-service">Terms</a></li><li><a href="/legal/privacy-policy">Privacy</a></li><li><a href="/security">Security</a></li></ul></div>
+      <div><h4>Product</h4><ul><li><a href="#how">How it works</a></li><li><a href="#proof">Proof</a></li><li><a href="#why">Why Sentinel</a></li></ul></div>
+      <div><h4>See it</h4><ul><li><a href="#film">Watch the film</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#demo">Book a demo</a></li><li><a href="mailto:leo@sentinel-lai.com">Contact</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Sentinel. All rights reserved.</span><span>Built for legal teams that have to be right.</span></div>
+    <div class="footer-bottom"><span>© 2026 Sentinel. Decision support, not legal advice.</span><span>Built for legal teams that have to be right.</span></div>
   </div>
+  <div class="wordmark swarm-anchor" id="wordmark" aria-hidden="true"><span>Sentinel</span></div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
 <script src="/feature-demos.js"></script>
+<script src="/v2/swarm.js"></script>
 <script src="/v2/v2.js"></script>
 </body>
 </html>

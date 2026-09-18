@@ -59,8 +59,8 @@
         <div class="cert" data-reveal style="--d:0s"><div class="cert-badge"><b>SOC 2</b><small>Type II</small></div><span class="cert-lbl">Certification <a href="#p08">Details ↗</a></span></div>
         <div class="cert" data-reveal style="--d:.08s"><div class="cert-badge"><b>ISO</b><small>27001</small></div><span class="cert-lbl">Certification <a href="#p08">Details ↗</a></span></div>
         <div class="cert" data-reveal style="--d:.16s"><div class="cert-badge"><b>GDPR</b><small>aligned</small></div><span class="cert-lbl">Data protection <a href="#p08">Details ↗</a></span></div>
-        <div class="cert" data-reveal style="--d:.24s"><div class="cert-badge is-real"><b>On-prem</b><small>air-gapped</small></div><span class="cert-lbl">Deployment <a href="#p08">Details ↗</a></span></div>
-        <div class="cert" data-reveal style="--d:.32s"><div class="cert-badge is-real"><b>SSO</b><small>SAML</small></div><span class="cert-lbl">Access control <a href="#p08">Details ↗</a></span></div>
+        <div class="cert" data-reveal style="--d:.24s"><div class="cert-badge is-real"><b>Training</b><small>off by default</small></div><span class="cert-lbl">Your data <a href="#p08">Details ↗</a></span></div>
+        <div class="cert" data-reveal style="--d:.32s"><div class="cert-badge is-real"><b>Roles</b><small>credit limits</small></div><span class="cert-lbl">Access control <a href="#p08">Details ↗</a></span></div>
       </div>
       <p class="pnote">Badges outlined in blue are true today. The others are slots for certifications when you have them; ship them empty rather than invented.</p>
     </div>
@@ -162,7 +162,7 @@
             <div class="result-title" id="resTitle"></div>
             <div class="refs" id="resRefs"></div>
             <div class="result-redline"><span class="chip-redline">Redline</span><span id="resRedline"></span></div>
-            <div class="result-own" id="resOwn" hidden>Live analysis runs on your machines, not on this website. Book a demo and we will run it on your contract.</div>
+            <div class="result-own" id="resOwn" hidden>Live analysis runs in the product, not on this website. Book a demo and we will run it on your contract.</div>
           </div>
         </div>
       </div>
@@ -245,7 +245,7 @@
       <div class="faq" id="faq" data-reveal style="--d:.1s">
         <details open><summary>Does Sentinel use a language model?<i></i></summary><div class="faq-a"><p>Not to find or prove a finding. Findings come from a deterministic engine that reads the clauses and plays the contract forward; a language model is used only to talk with you about the results.</p></div></details>
         <details><summary>How is a finding “proven”?<i></i></summary><div class="faq-a"><p>Each one carries the clause it comes from, the scenario that triggers it, and a replayable trace. You can check every step yourself.</p></div></details>
-        <details><summary>Where does it run, and what leaves the building?<i></i></summary><div class="faq-a"><p>On your own machines, fully offline if you need it. No contract, clause or finding leaves your network.</p></div></details>
+        <details><summary>What happens to our contracts?<i></i></summary><div class="faq-a"><p>They stay yours. Sentinel doesn’t train on them unless you switch that on, and it is off by default. Delete a contract and the file, the findings, the memo and every export go with it.</p></div></details>
         <details><summary>Which formats and languages?<i></i></summary><div class="faq-a"><p>PDF and DOCX in, a memorandum in PDF or DOCX out. The interface is available in English and Russian.</p></div></details>
         <details><summary>What does the memorandum contain?<i></i></summary><div class="faq-a"><p>Every finding, ranked by exposure, with its citation and a redline. The page, the PDF and the DOCX are the same document.</p></div></details>
         <details><summary>Can we run it on our own playbook?<i></i></summary><div class="faq-a"><p>Yes. Stance-based redlines and custom playbooks tell the engine which side you are on and what you will not accept.</p></div></details>
@@ -262,7 +262,7 @@
         <div class="num" data-reveal style="--d:0s"><b><span class="count" data-count="217">0</span></b><span>rules checked on every contract</span></div>
         <div class="num" data-reveal style="--d:.08s"><b><span class="count" data-count="6">0</span></b><span>scenario types played forward</span></div>
         <div class="num" data-reveal style="--d:.16s"><b><span class="count" data-count="14">0</span></b><span>findings on the 64-page demo agreement</span></div>
-        <div class="num" data-reveal style="--d:.24s"><b><span class="count" data-count="0">0</span></b><span>documents that leave your building</span></div>
+        <div class="num" data-reveal style="--d:.24s"><b><span class="count" data-count="0">0</span></b><span>contracts used for training without your say-so</span></div>
       </div>
     </div>
   </section>
@@ -336,7 +336,7 @@
           <div class="og-glow" aria-hidden="true"></div>
           <div class="og-top"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#f7f8f8"/><rect x="6" y="10.5" width="12" height="3" rx="1.5" fill="#08090a"/></svg><span>Sentinel</span></div>
           <div class="og-title">Attack the contract before the other side does.</div>
-          <div class="og-facts">On-premise or air-gapped · No data leaves your building · Every finding cited to its clause</div>
+          <div class="og-facts">Every finding cited to its clause · Played forward · PDF · DOCX memo</div>
           <div class="og-finding"><span class="chip crit">Critical</span><span>Liability cap loophole · § 7.2 · proven</span></div>
         </div>
         <div class="og-meta"><b>Sentinel — Attack the contract before the other side does</b><span>Sentinel hunts for the loopholes, contradictions and impossible terms a read-through misses…</span><span class="og-domain">sentinel.law</span></div>

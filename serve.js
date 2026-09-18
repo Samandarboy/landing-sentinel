@@ -1,14 +1,19 @@
 // Static server for the Sentinel landing page.
 // - Strips query strings before resolving files
-// - Emulates the /_next/image optimizer path used by the page's images
+// - Emulates the /_next/image optimizer path used by the legacy page's images
 // - Sets correct MIME types (woff2/webp/svg/etc. that Windows registry omits)
-// Usage: node serve.js [port]   (default 8080), serves ./site
+// - Redirects a directory named without its trailing slash (/v2 -> /v2/)
+// - Streams files with stream.pipeline, so a request the browser aborts
+//   (every page load aborts its first probe of the film) closes its file
+// Usage: node serve.js [port]   (default 8123; 8080 is the product
+// interface's port), serves ./site
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const { pipeline } = require('stream');
 
 const ROOT = path.join(__dirname, 'site');
-const PORT = parseInt(process.argv[2], 10) || 8080;
+const PORT = parseInt(process.argv[2], 10) || 8123;
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -47,6 +52,16 @@ const server = http.createServer((req, res) => {
     let file = path.join(ROOT, pathname);
     // prevent path traversal
     if (!file.startsWith(ROOT)) { res.writeHead(403); return res.end('Forbidden'); }
+    // A directory without its trailing slash (/v2): send the browser to /v2/ so
+    // the page's relative references (media/...) resolve under it. The Location
+    // is rebuilt from the resolved path under ROOT, never echoed from the
+    // request, so /\v2 or //v2 cannot turn into a redirect to another host.
+    if (fs.existsSync(file) && fs.statSync(file).isDirectory() && !pathname.endsWith('/')) {
+      const rel = path.relative(ROOT, file).split(path.sep).filter(Boolean).map(encodeURIComponent).join('/');
+      const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
+      res.writeHead(301, { Location: (rel ? '/' + rel + '/' : '/') + query });
+      return res.end();
+    }
     if (!fs.existsSync(file) || fs.statSync(file).isDirectory()) {
       // SPA-ish fallback: try .html, else 404
       if (fs.existsSync(file + '.html')) file = file + '.html';
@@ -68,10 +83,15 @@ const server = http.createServer((req, res) => {
       const end = range[1] && range[2] ? Math.min(parseInt(range[2], 10), size - 1) : size - 1;
       if (start >= size || start > end) { res.writeHead(416, { 'Content-Range': 'bytes */' + size }); return res.end(); }
       res.writeHead(206, Object.assign({}, headers, { 'Content-Range': 'bytes ' + start + '-' + end + '/' + size, 'Content-Length': end - start + 1 }));
-      return fs.createReadStream(file, { start, end }).pipe(res);
+      // pipeline, not .pipe(): when the client aborts, pipe() only unpipes and
+      // the paused ReadStream keeps its file descriptor open for good (one per
+      // aborted film request, until EMFILE). pipeline destroys the source and
+      // hands the error to the callback instead of throwing it uncaught.
+      pipeline(fs.createReadStream(file, { start, end }), res, () => {});
+      return;
     }
     res.writeHead(200, Object.assign({}, headers, { 'Content-Length': size }));
-    fs.createReadStream(file).pipe(res);
+    pipeline(fs.createReadStream(file), res, () => {});
   } catch (e) {
     res.writeHead(500, { 'Content-Type': 'text/plain' });
     res.end('500: ' + e.message);

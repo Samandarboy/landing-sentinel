@@ -189,7 +189,7 @@
       setTimeout(function () { if (current !== 'own') box.classList.add('is-hit'); }, t1);
       setTimeout(function () {
         if (current === 'own') {
-          sev.className = 'chip'; sev.textContent = 'Live analysis'; proven.textContent = 'not on this website'; title.textContent = 'This site cannot read your clause, and that is the point.'; refs.innerHTML = ''; redline.textContent = 'Book a demo and we run it on your machines.'; ownMsg.hidden = false;
+          sev.className = 'chip'; sev.textContent = 'Live analysis'; proven.textContent = 'not on this website'; title.textContent = 'This site cannot read your clause, and that is the point.'; refs.innerHTML = ''; redline.textContent = 'Book a demo and we run it on your contract.'; ownMsg.hidden = false;
           status.textContent = 'Nothing was sent anywhere.';
         } else {
           ownMsg.hidden = true; paint(EX[current]); status.textContent = 'Finding proven · cited to the clause.';
