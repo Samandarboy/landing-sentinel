@@ -117,6 +117,7 @@ html.anim [data-stagger].in:not(.done) > * { transition: opacity 0.9s var(--soft
 .header.is-hidden { transform: translateY(-100%); }
 .header-inner { position: relative; height: 100%; max-width: var(--page-max); margin-inline: auto; padding-inline: var(--pad); display: flex; align-items: center; gap: 8px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 590; letter-spacing: -0.012em; color: var(--fg); margin-right: 20px; }
+/* the logo: drawn in currentColor, so it is white on the dark page and black on anything light */
 .mark { width: 22px; height: 22px; flex: none; }
 .nav { display: flex; align-items: center; gap: 2px; }
 .nav a {
@@ -377,7 +378,8 @@ html.js:not(.ready) .hero-title, html.js:not(.ready) .hero-lede, html.js:not(.re
 .ans-name { font-size: 14px; font-weight: 510; color: rgba(255, 255, 255, 0.72); }
 .ans-avatar { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; flex: none; }
 .ans-avatar.bot { background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.75); font: 600 9.5px/1 var(--mono); letter-spacing: 0.04em; }
-.ans-avatar.sen svg { width: 22px; height: 22px; }
+.ans-avatar.sen { background: #f7f8f8; color: #08090a; }
+.ans-avatar.sen svg { width: 15px; height: 15px; }
 .ans-tag { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--line-2); font: 500 10.5px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); transition: color 0.4s, border-color 0.4s, background 0.4s; }
 .ans-tag::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
 .ans-tag span { display: inline-block; }

@@ -12,13 +12,14 @@
     simulate: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     stress: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="none"/></svg>',
     report: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/><path d="M14 3v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 14l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    logo: '<svg viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M45.99 10.61L0.76 91.88L35.45 71.76ZM50 0L55.82 72.89L50 100L44.18 72.89ZM54.01 10.61L64.55 71.76L99.24 91.88Z"/></svg>',
     check: '<svg viewBox="0 0 24 24" width="8" height="8" aria-hidden="true"><path d="M5 12l4 4 10-10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     warn: '<svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M12 3 2.5 20h19L12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="17.2" r="1" fill="currentColor"/></svg>'
   };
 
   function railHTML(active) {
     var modes = [['draft', 'Draft'], ['detect', 'Detect'], ['simulate', 'Simulate'], ['stress', 'Stress'], ['report', 'Report']];
-    return '<div class="sd-rail"><div class="sd-rail-brand"></div>' + modes.map(function (m) {
+    return '<div class="sd-rail"><div class="sd-rail-brand">' + ICONS.logo + '</div>' + modes.map(function (m) {
       return '<div class="sd-rail-btn' + (m[0] === active ? ' is-active' : '') + '">' + ICONS[m[0]] + '<span>' + m[1] + '</span></div>';
     }).join('') + '</div>';
   }

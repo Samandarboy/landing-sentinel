@@ -32,7 +32,8 @@ static page with every state shown, no WebGL gives the page without its particle
 |------|------------|
 | `site/index.html`            | the live page (v2, see below); the old single-file page is `site/legacy/index.html` |
 | `site/v2/`                   | the v2 page's own copy, stylesheet, script and product film (see below) |
-| `site/favicon.ico`, `site/icons/` | Sentinel mark (favicon, 180 px touch icon, 512 px icon) |
+| `site/icons/logo.svg`       | the logo, the master vector (black, 100×100 box): three blades, symmetric, traced from the owner's drawing on 2026-09-21 |
+| `site/favicon.svg`, `site/favicon.ico`, `site/icons/` | the tab icon (SVG: black on a light browser, white on a dark one; ICO fallback for browsers without SVG icons: white on a dark rounded tile, 16/32/48 px), the 180 px touch icon and the 512 px app icon (white on the site's near-black), and `logo-512.png` (black on transparent: the JSON-LD `Organization.logo`, which search engines show on white) |
 | `site/og.png`                | the social card (`og:image` / `twitter:image`, 1200×630) |
 | `site/robots.txt`, `site/sitemap.xml` | crawler rules (they disallow `/legacy/` and `/proposals/`) and the sitemap |
 | `site/feature-demos.js`      | live animated demos of the Sentinel interface (Detect / Simulate / Report) with camera zooms, built on the Valve/Riot fixture data |
@@ -107,6 +108,12 @@ The Sentinel card in the duel keeps the chatbot card's height and holds three th
 the verdict, the clause it rests on (set small: it is the evidence, not the headline)
 and the contract played forward on a timeline, where a playhead runs the track and each
 event lands as it is reached.
+
+The logo is inline SVG in `currentColor` wherever the page shows it (header, floating pill, footer, the
+demo interface's rail, the Sentinel avatar in the duel), so it takes the colour of the text around it:
+white on the dark page, black on anything light (the duel avatar's light disc, the legacy page, the
+demos' light theme, the film's end-card pill). The path lives in one place per file; `site/icons/logo.svg`
+is the source.
 
 Copy rules the page keeps: it claims nothing about where Sentinel is deployed (no
 on-premise, offline or air-gapped wording anywhere under `site/`), the call is the

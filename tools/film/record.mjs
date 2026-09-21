@@ -140,7 +140,8 @@ await page.evaluate(() => {
   mk('vfade', '');
   mk('vcur', '<svg width="22" height="27" viewBox="0 0 22 27"><path d="M3 2 L3 21 L8.2 16.4 L11.6 24.2 L15 22.7 L11.6 15 L18.4 15 Z" fill="#fff" stroke="#111" stroke-width="1.5" stroke-linejoin="round"/></svg>');
   mk('vrip', ''); mk('vcap', '<span class="n"></span><span class="t"></span>');
-  const MARK = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#f7f8f8"/><rect x="6" y="10.5" width="12" height="3" rx="1.5" fill="#08090a"/></svg>';
+  // the logo in currentColor: white on the dark title card, black inside the light end-card pill
+  const MARK = '<svg viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M45.99 10.61L0.76 91.88L35.45 71.76ZM50 0L55.82 72.89L50 100L44.18 72.89ZM54.01 10.61L64.55 71.76L99.24 91.88Z"/></svg>';
   mk('vcard', `<div class="brand in">${MARK}Sentinel</div><div class="s in" style="animation-delay:.15s">A contract, read adversarially.</div>`);
   window.__cur = (x, y) => { document.getElementById('vcur').style.transform = `translate(${x}px,${y}px)`; };
   window.__ripple = (x, y) => { const r = document.getElementById('vrip'); r.style.left = x + 'px'; r.style.top = y + 'px'; r.classList.remove('go'); void r.offsetWidth; r.classList.add('go'); };

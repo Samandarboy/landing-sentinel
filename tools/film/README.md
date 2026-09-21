@@ -34,6 +34,14 @@ bash encode.sh           # -> out/sentinel-demo.mp4, .webm, -poster.jpg
 
 Then copy the three files from `out/` into `site/v2/media/`.
 
+## The logo in the film
+
+The title card and the end card draw the logo from `MARK` in `record.mjs` (in `currentColor`: white on the
+dark title card, black inside the light end-card pill). The film in `site/v2/media/` was recorded with the
+old square mark; on 2026-09-21 its two cards were re-drawn with the new logo in place (frames 0-119 and
+2822-3011 re-encoded with the settings above, the 2702 frames between them copied untouched), so a new take
+is not needed for the logo. The interface itself, as recorded, still shows the product's own mark in its rail.
+
 ## What the script does
 
 Title card → upload the fixture PDF → a 3-second parse animation → the parsed
