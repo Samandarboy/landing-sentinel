@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security — Sentinel</title>
+<meta name="description" content="How Sentinel protects the contracts you upload: encryption, sign-in and session controls, account separation, where contract text goes, retention, and what we do not claim.">
+<link rel="canonical" href="https://www.sentinel.law/security/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#08090a">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sentinel">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://www.sentinel.law/security/">
+<meta property="og:title" content="Security — Sentinel">
+<meta property="og:description" content="How Sentinel protects the contracts you upload: encryption, sign-in and session controls, account separation, where contract text goes, retention, and what we do not claim.">
+<meta property="og:image" content="https://www.sentinel.law/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Security — Sentinel">
+<meta name="twitter:description" content="How Sentinel protects the contracts you upload: encryption, sign-in and session controls, account separation, where contract text goes, retention, and what we do not claim.">
+<meta name="twitter:image" content="https://www.sentinel.law/og.png">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icons/icon-180.png">
+<link rel="alternate" type="application/rss+xml" title="Sentinel blog" href="/blog/rss.xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Security","url":"https://www.sentinel.law/security/","description":"How Sentinel protects the contracts you upload: encryption, sign-in and session controls, account separation, where contract text goes, retention, and what we do not claim.","dateModified":"2026-09-27","publisher":{"@type":"Organization","name":"Sentinel","url":"https://www.sentinel.law/"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/v2/v2.css?v=20260927">
+<link rel="stylesheet" href="/v2/pages.css?v=20260927">
+</head>
+<body class="textpage">
+<!-- built by tools/build_pages.py from Landing/content: edit the source, not this file -->
+
+<header class="dock" id="header">
+  <a class="brand" href="/" aria-label="Sentinel home">
+    <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M45.99 10.61L0.76 91.88L35.45 71.76ZM50 0L55.82 72.89L50 100L44.18 72.89ZM54.01 10.61L64.55 71.76L99.24 91.88Z"/></svg>
+    Sentinel
+  </a>
+  <nav class="nav" id="dockNav" aria-label="Primary">
+    <a href="/#product"><span>Product</span></a>
+    <a href="/#how"><span>How it works</span></a>
+    <a href="/#proof"><span>Proof</span></a>
+    <a href="/#why"><span>Why Sentinel</span></a>
+    <a href="/#film"><span>Watch</span></a>
+    <a href="/#faq"><span>FAQ</span></a>
+  </nav>
+  <a class="btn btn-sm" href="/#demo">Book a demo</a>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/#product" style="--i:0">Product</a>
+  <a href="/#how" style="--i:1">How it works</a>
+  <a href="/#proof" style="--i:2">Proof</a>
+  <a href="/#why" style="--i:3">Why Sentinel</a>
+  <a href="/#film" style="--i:4">Watch</a>
+  <a href="/#faq" style="--i:5">FAQ</a>
+  <a class="btn" href="/#demo" style="--i:6">Book a demo</a>
+</div>
+
+<main id="top">
+  <article class="doc">
+    <div class="container">
+      <header class="doc-head">
+        <div class="eyebrow">Trust</div>
+        <h1 class="h1">Security</h1>
+        <div class="doc-meta"><p><strong>Sentinel LAI, Inc.</strong></p>
+<p><strong>Last Updated: September 27, 2026</strong></p>
+<p>This page brings together, word for word, the security commitments made in our <a href="/legal/privacy-policy/">Privacy Policy</a>. The Privacy Policy is the governing text; each passage below names the section it comes from.</p></div>
+      </header>
+      <div class="doc-grid">
+        <nav class="doc-toc" aria-label="On this page"><div class="eyebrow">On this page</div><ol><li><a href="#what-we-do">What we do</a></li><li><a href="#what-we-do-not-claim">What we do not claim</a></li><li><a href="#incidents">Incidents</a></li><li><a href="#where-contract-text-goes">Where contract text goes</a></li><li><a href="#training-on-your-content">Training on your content</a></li><li><a href="#retention-and-deletion">Retention and deletion</a></li><li><a href="#contact">Contact</a></li></ol></nav>
+        <div class="prose">
+<h2 id="what-we-do">What we do</h2>
+<p><em>From <a href="/legal/privacy-policy/#12-security">Privacy Policy, Section 12.1</a>.</em></p>
+<p><strong>12.1 What we do.</strong> We maintain administrative, technical, and physical safeguards designed to protect personal information against unauthorized access, disclosure, alteration, and destruction. These include:</p>
+<p class="li">(a) encryption of data in transit using TLS, both between you and the Platform and between the Platform and its subprocessors;</p>
+<p class="li">(b) storage of the Platform's data on encrypted volumes;</p>
+<p class="li">(c) passwords stored only as salted PBKDF2-HMAC-SHA256 hashes with 200,000 iterations, compared in constant time, and never written to disk or to a log in plaintext;</p>
+<p class="li">(d) signed, HttpOnly session tokens with a cross-site request forgery guard, session invalidation on password change, administrator reset or account disable, rate limiting of sign-in attempts and account lockout after repeated failures;</p>
+<p class="li">(e) a strict Content Security Policy and related browser security headers on the Platform, which loads no third-party script or asset;</p>
+<p class="li">(f) separation of each account's documents, reports, exports and records into its own storage area, resolved through the signed-in account, with no administrator-readable view of another account's documents;</p>
+<p class="li">(g) access to production systems on a least-privilege basis, with authentication requirements for personnel and logging of that access; and</p>
+<p class="li">(h) an activity record of sensitive reads as well as writes, as described in Section 3.2.</p>
+<h2 id="what-we-do-not-claim">What we do not claim</h2>
+<p><em>From <a href="/legal/privacy-policy/#12-security">Privacy Policy, Section 12.2</a>.</em></p>
+<p><strong>12.2 What we do not claim.</strong> No method of transmission or storage is completely secure, and we do not guarantee absolute security. In particular: the Platform does not offer multi-factor authentication, single sign-on or SAML federation; uploaded files are not scanned for malicious code; the model-answer cache described in Section 11.3 is deliberately shared across accounts rather than partitioned; and a person with operating-system level access to our production infrastructure could read data on it, which is why such access is restricted, authenticated and logged.</p>
+<h2 id="incidents">Incidents</h2>
+<p><em>From <a href="/legal/privacy-policy/#12-security">Privacy Policy, Section 12.3</a>.</em></p>
+<p><strong>12.3 Incidents.</strong> If we become aware of a security incident affecting your personal information or Customer Content, we will notify you without undue delay and as required by applicable law.</p>
+<h2 id="where-contract-text-goes">Where contract text goes</h2>
+<p><em>From <a href="/legal/privacy-policy/#6-artificial-intelligence-processing-and-subprocessors">Privacy Policy, Section 6.1</a>.</em></p>
+<p><strong>6.1 What happens to the contracts you upload.</strong> The Platform performs its analysis by transmitting the text of Customer Content over an encrypted connection to a third-party provider of large language model inference services. Model inference is used at several stages — detection of findings, simulation of scenarios, the review of candidate findings before they are shown, drafting of redlines and memoranda, and the document assistant — so contract language reaches that provider whenever an analysis runs. This is the routine and expected operation of the Platform, not an exception to it.</p>
+<h2 id="training-on-your-content">Training on your content</h2>
+<p><em>From <a href="/legal/privacy-policy/#7-we-do-not-train-on-your-content-without-your-opt-in">Privacy Policy, Section 7.1</a>.</em></p>
+<p><strong>7.1</strong> We do not use Customer Content or the analyses generated from it to train, fine-tune, or otherwise develop our models or those of any third party, unless the account concerned has given a separate, express opt-in.</p>
+<h2 id="retention-and-deletion">Retention and deletion</h2>
+<p><em>From <a href="/legal/privacy-policy/#11-retention-and-deletion">Privacy Policy, Sections 11.1, 11.3, 11.5 and 11.6</a>.</em></p>
+<p><strong>11.1 Customer Content.</strong> We retain Customer Content and the analyses generated from it for as long as the account remains active, or until it is deleted. Deleting a document removes its parse, its reports, its versions, its exports, its progress records, its browser-side history, and its entries in the quality record described in Section 7.3, from active systems promptly.</p>
+<p><strong>11.3 Cached model answers — a residue that outlives deletion.</strong> To avoid paying for and re-running identical model calls, the Platform caches model answers keyed by a cryptographic hash of the prompt that produced them, and those prompts contain contract language. <strong>This cache is shared across accounts by design and is not partitioned per account.</strong> A cached answer can only be reached by a request that already contains the same text, so it cannot expose your contract to anyone who does not already hold it; but the cached bytes remain on disk after a document or an account is deleted, until the cache retention window collects them. That window is thirty (30) days, and the cache is swept every twenty-four (24) hours. If your policy requires erasure on a shorter cycle, write to <a href="mailto:leo@sentinel-lai.com" data-contact>leo@sentinel-lai.com</a> and we will disable caching for your deployment.</p>
+<p><strong>11.5 Activity and security records.</strong> The per-account activity record described in Section 3.2 is retained for three hundred and sixty-five (365) days. Server logs, which contain no document text, are retained for fourteen (14) days.</p>
+<p><strong>11.6 Backups.</strong> Encrypted backup copies may persist for up to thirty (30) days after deletion from active systems, after which they are overwritten in the ordinary backup rotation. Backups are not accessed for any purpose other than disaster recovery.</p>
+<h2 id="contact">Contact</h2>
+<p><em>From <a href="/legal/privacy-policy/#17-contact-us">Privacy Policy, Section 17</a>.</em></p>
+<p><strong>Sentinel LAI, Inc.</strong><br />
+2618 College Avenue<br />
+Berkeley, CA 94705<br />
+United States<br />
+Email: <a href="mailto:leo@sentinel-lai.com" data-contact>leo@sentinel-lai.com</a></p>
+        </div>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M45.99 10.61L0.76 91.88L35.45 71.76ZM50 0L55.82 72.89L50 100L44.18 72.89ZM54.01 10.61L64.55 71.76L99.24 91.88Z"/></svg>
+          Sentinel
+        </a>
+        <p>Sentinel finds how your contract breaks, and proves it, clause by clause.</p>
+      </div>
+      <div><h4>Product</h4><ul><li><a href="/#how">How it works</a></li><li><a href="/#proof">Proof</a></li><li><a href="/#why">Why Sentinel</a></li></ul></div>
+      <div><h4>See it</h4><ul><li><a href="/#film">Watch the film</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="/#demo">Book a demo</a></li><li><a href="mailto:leo@sentinel-lai.com" data-contact>Contact</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/legal/privacy-policy/">Privacy Policy</a></li><li><a href="/legal/terms-of-service/">Terms of Use</a></li><li><a href="/security/">Security</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Sentinel. Decision support, not legal advice.</span><span>Built for legal teams that have to be right.</span></div>
+  </div>
+  <div class="wordmark swarm-anchor" id="wordmark" aria-hidden="true"><span>Sentinel</span></div>
+</footer>
+
+<script src="/v2/dock.js?v=20260927"></script>
+<script src="/v2/contact.js?v=20260927"></script>
+</body>
+</html>

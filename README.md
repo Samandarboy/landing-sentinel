@@ -35,7 +35,10 @@ static page with every state shown, no WebGL gives the page without its particle
 | `site/icons/logo.svg`       | the logo, the master vector (black, 100×100 box): three blades, symmetric, traced from the owner's drawing on 2026-09-21 |
 | `site/favicon.svg`, `site/favicon.ico`, `site/icons/` | the tab icon (SVG: black on a light browser, white on a dark one; ICO fallback for browsers without SVG icons: white on a dark rounded tile, 16/32/48 px), the 180 px touch icon and the 512 px app icon (white on the site's near-black), and `logo-512.png` (black on transparent: the JSON-LD `Organization.logo`, which search engines show on white) |
 | `site/og.png`                | the social card (`og:image` / `twitter:image`, 1200×630) |
-| `site/robots.txt`, `site/sitemap.xml` | crawler rules (they disallow `/legacy/` and `/proposals/`) and the sitemap |
+| `site/robots.txt`, `site/sitemap.xml` | crawler rules (they disallow `/legacy/` and `/proposals/`) and the sitemap (the home page's entry is hand-written; every other entry is written by `tools/build_pages.py`) |
+| `site/legal/privacy-policy/`, `site/legal/terms-of-service/`, `site/security/` | the legal pages and the Security page, built from `content/` (see "Text pages and the blog") |
+| `site/blog/`                 | the blog: the list (`index.html`), one folder per post, and the feed (`rss.xml`), built from `content/blog/` |
+| `content/`                   | the Markdown sources of the text pages (not served) |
 | `site/feature-demos.js`      | live animated demos of the Sentinel interface (Detect / Simulate / Report) with camera zooms, built on the Valve/Riot fixture data |
 | `site/landing/sentinel-demo.css` | styles for the interface demos (product design tokens) |
 | `site/legacy/index.html`     | the previous page (a Next.js export); the files below are used by it only |
@@ -73,6 +76,10 @@ node serve.js 8123     # then open http://localhost:8123/v2/
 | `site/v2/v2.css`     | design system + layout + motion states; dark tokens for the product demos |
 | `site/v2/v2.js`      | the motion layer: Lenis smooth scroll, header/pill states and the page-progress hairline, the hero intro, the text system (see below), the scroll-linked statement, the three pillar scenes (find / prove / fix, each a looping GSAP timeline that runs only on screen), "how it works" (a scroll-driven sticky stage on desktop, a swipeable story on tablets and phones), the proof "duel", the "why" panel (a fine dot-matrix display, about 36 dots across a sign, that a scan line writes a sign onto for each of three outcomes: a clock, a target, a memo), the film player, the FAQ deck, the Cal.com booking embed |
 | `site/v2/swarm.js`   | the particle layer (three.js, one fixed WebGL canvas under the page). Two populations: a sparse drifting dust that is always there, and points that stay dark until the page asks for a figure (a contract page beside the statement, a question mark at the FAQ, the footer wordmark). Figures are built like print, not sand: one point per cell of a regular lattice, edge cells get a smaller dot in proportion to coverage (a halftone), the figure is lit from the top left, assembles in a sweep (a page top to bottom, a word left to right) with each point rising a short way into place, and then holds still. The contract page is generated point by point (folded corner, title, rule, numbered paragraphs broken into words, two flagged lines, signatures, a seal); glyphs and text are rasterised at one pixel per cell. Colours are plain vectors, not `THREE.Color` (three would convert them to linear light and the shader writes straight to the screen). The pointer stirs the dust along its own motion (a wake), never outward. The headline is NOT a figure: it is set in type from its first frame. `v2.js` fetches three.js after first paint; the page never waits for it |
+| `site/v2/dock.js`    | the nav, on every page (SNT-98): a floating dock of text pills with the macOS dock's motion (after Aceternity's FloatingDock). The pill under the pointer grows, its neighbours grow a little less and step aside, each on a spring (`--s` per link; its margins make room, so the bar widens around it). Mouse only; touch, keyboard and reduced motion get plain pills. Also: the firmer glass once the page scrolls, the phone menu (a floating panel under the dock; Escape or a click outside closes it) and the current-section dot on the home page |
+| `site/v2/contact.js` | Contact (SNT-105): every `a[data-contact]` (the footer's Contact, each address on the legal pages) opens a small card with the address in full, a Copy button (with a select-and-press-Ctrl+C fallback), a mail-app link and the Cal.com link, so a click never depends on a mail app being set up. Without JavaScript it is a plain `mailto:` |
+| `site/v2/particle-mark.js` | the particle mark in the booking card (SNT-104): the logo in 9,000 points (6,000 at 1024px and below) that gather from a cloud as the card scrolls up, sway, lean toward the pointer, with a blue scan line reading down the mark over faint clause lines. Plain WebGL. Lower left of the panel on wide screens, beside the copy at 1024px and below; phones (640px and below) skip it before any setup. `?particles=off` adds nothing, `?mark=timed` gathers on a timer instead of the scroll; reduced motion draws one still frame of the formed mark; no WebGL adds nothing |
+| `site/v2/pages.css`  | the text pages' styles (legal, security, blog), on top of `v2.css` |
 | `site/v2/media/`     | the product film: `sentinel-demo.mp4` (H.264, 1080p, 60 fps, 50 s, ~12 MB), `sentinel-demo.webm` (VP9, ~11 MB), `sentinel-demo-poster.jpg` |
 
 Section order: hero → statement + three pillars → how it works → proof → why
@@ -109,14 +116,15 @@ the verdict, the clause it rests on (set small: it is the evidence, not the head
 and the contract played forward on a timeline, where a playhead runs the track and each
 event lands as it is reached.
 
-The logo is inline SVG in `currentColor` wherever the page shows it (header, floating pill, footer, the
+The logo is inline SVG in `currentColor` wherever the page shows it (the dock, the footer, the
 demo interface's rail, the Sentinel avatar in the duel), so it takes the colour of the text around it:
 white on the dark page, black on anything light (the duel avatar's light disc, the legacy page, the
 demos' light theme, the film's end-card pill). The path lives in one place per file; `site/icons/logo.svg`
 is the source.
 
 Copy rules the page keeps: it claims nothing about where Sentinel is deployed (no
-on-premise, offline or air-gapped wording anywhere under `site/`), the call is the
+on-premise, offline or air-gapped wording anywhere under `site/` outside the verbatim
+legal texts in `site/legal/`), the call is the
 20 minutes of the Cal.com event, and every product claim was checked against the
 code on 2026-09-18 (a model reads the contract, so "no LLM" is not claimed; training
 consent is off by default; deleting a document removes its file, report and exports;
@@ -131,6 +139,37 @@ tall surface that is fitted by width (`--fit: width`) and panned, so the frames
 keep their corners and nothing is cropped mid-element. On tablets and phones
 "how it works" is not sticky: it is three stories with a progress bar each, which
 advance on their own, on a swipe or a tap on either side, and pause while held.
+
+## Text pages and the blog
+
+The legal pages, the Security page and the blog are written in Markdown under `content/`
+and built into `site/` by one script, which also writes `site/blog/rss.xml` and every
+`site/sitemap.xml` entry after the home page's. The pages take the dock, the phone menu
+and the footer from `site/v2/index.html` (with its `#section` links pointed at `/#section`),
+so rebuild after editing those too. `--check` fails if any output is stale:
+
+```bash
+python tools/build_pages.py
+```
+
+- `content/legal/privacy-policy.md`, `content/legal/terms-of-service.md`: the owner's texts,
+  verbatim, with the Effective / Last Updated dates set to 27 September 2026. Two
+  placeholders are left visible on purpose: the cloud hosting provider in Privacy §6.2 and
+  the EEA/UK Article 27 representative in §17. Privacy §6.3 names
+  `sentinel-lai.com/subprocessors`, which does not exist yet. These texts mention
+  on-premises and air-gapped deployments (Privacy §1.1 and §6.5, Terms): they are the legal
+  text and are not edited; the rule below about deployment claims covers the marketing copy.
+- `content/security.md`: no new claims. Every passage is quoted word for word from the
+  Privacy Policy (§12.1-12.3, §6.1, §7.1, §11.1, 11.3, 11.5, 11.6, §17) and names its
+  section; the Privacy Policy governs.
+- `content/blog/`: one file per post. Copy `_template.md` (it explains the front matter:
+  title, description, date, slug, draft) to a name that does not start with `_`. The build
+  adds the post at `/blog/<slug>/` with its own title, description, canonical, Open Graph
+  and `BlogPosting` JSON-LD, lists it on `/blog/`, and adds it to the feed and the sitemap.
+  Removing a source removes its page on the next build. Images go in `site/blog/media/`.
+  With no posts, `/blog/` says the first posts are on the way.
+
+A bare email address in a text page becomes a `data-contact` link (see `contact.js`).
 
 ## Source checkout only — not shipped in product builds
 
@@ -155,16 +194,17 @@ what-if → memorandum on the fixture agreement, with the analysis replayed from
 stored run so a take never spends credits. It needs the development data store
 and a running local backend.
 
-### Page tooling (`tools/sync_page.py`, `tools/og/`)
+### Page tooling (`tools/sync_page.py`, `tools/build_pages.py`, `tools/og/`)
 
-`sync_page.py` is described above. `tools/og/og.html` is the source of the social
+`sync_page.py` and `build_pages.py` are described above (`build_pages.py` needs Python's
+`markdown` package; its outputs are committed, so a product build does not run it). `tools/og/og.html` is the source of the social
 card; `node tools/og/render.mjs` renders it to `site/og.png` (needs
 `npm i playwright@1.49.1`, Edge via `channel: 'msedge'`).
 
 ## Before it goes fully live
 
-- Publish Terms and Privacy pages and link them from the footer. The footer has no
-  legal links today because the pages do not exist (the old links returned 404).
+- Fill the two placeholders left in the Privacy Policy (the hosting provider in §6.2, the
+  Article 27 representative in §17) and publish the subprocessors page that §6.3 points to.
 - `site/legacy/index.html` is the previous page and still ships. Its on-premise and
   SSO lines were replaced on 2026-09-18, but it still carries a price list and the
   "No LLMs" / "0 hallucinations" chips, which the product no longer supports.

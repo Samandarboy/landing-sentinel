@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sentinel blog</title>
+    <link>https://www.sentinel.law/blog/</link>
+    <description>Notes from Sentinel on adversarial contract review: how contracts break, and how to prove it.</description>
+    <language>en-gb</language>
+    <atom:link href="https://www.sentinel.law/blog/rss.xml" rel="self" type="application/rss+xml"/>
+  </channel>
+</rss>

@@ -118,50 +118,24 @@
     });
   }
 
-  /* ---------- header: blur on scroll, then hand over to the floating pill; a hairline tracks the page ---------- */
-  var menuOpen = false;
+  /* ---------- the nav is a floating dock (dock.js: scroll state, menu, magnify); here only the page-progress hairline ---------- */
   function closeMenu() {
-    menuOpen = false;
     var m = $('#mobileMenu'), b = $('#burger');
     if (m) m.classList.remove('is-open');
     if (b) b.setAttribute('aria-expanded', 'false');
   }
   function setupHeader() {
-    var header = $('#header'), pill = $('#pill'), hero = $('.hero'), bar = $('#progressBar');
-    var burger = $('#burger'), menu = $('#mobileMenu'), ticking = false;
+    var bar = $('#progressBar'), ticking = false;
+    if (!bar) return;
     function update() {
       ticking = false;
       var y = window.scrollY || window.pageYOffset;
-      var past = y > (hero ? hero.offsetHeight * 0.6 : 600);
-      header.classList.toggle('is-scrolled', y > 8);
-      header.classList.toggle('is-hidden', past && !menuOpen);
-      pill.classList.toggle('is-visible', past && !menuOpen);
-      pill.setAttribute('aria-hidden', past ? 'false' : 'true');
-      if (bar) bar.style.transform = 'scaleX(' + Math.min(1, y / Math.max(1, html.scrollHeight - window.innerHeight)).toFixed(4) + ')';
+      bar.style.transform = 'scaleX(' + Math.min(1, y / Math.max(1, html.scrollHeight - window.innerHeight)).toFixed(4) + ')';
     }
     function request() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
     window.addEventListener('scroll', request, { passive: true });
     window.addEventListener('resize', request);
     update();
-    if (burger && menu) {
-      burger.addEventListener('click', function () {
-        menuOpen = !menuOpen;
-        menu.classList.toggle('is-open', menuOpen);
-        burger.setAttribute('aria-expanded', String(menuOpen));
-        update();
-      });
-    }
-    // the pill marks the section you are in
-    var links = $$('.pill .nav a');
-    if (links.length && 'IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (!e.isIntersecting) return;
-          links.forEach(function (l) { l.classList.toggle('is-current', l.getAttribute('href') === '#' + e.target.id); });
-        });
-      }, { rootMargin: '-45% 0px -50% 0px' });
-      $$('main section[id]').forEach(function (s) { io.observe(s); });
-    }
   }
 
   // A jump (End key, scrollbar drag, an anchor far down) can carry an element from below the screen to above it
@@ -1152,10 +1126,10 @@
     });
   }
 
-  /* ---------- the rest of the life in the page: the header drops in, cards lean toward the pointer ---------- */
+  /* ---------- the rest of the life in the page: the dock drops in, cards lean toward the pointer ---------- */
   function setupExtras() {
     if (!anim) return;
-    gsap.from('.header-inner > *', { y: -14, opacity: 0, duration: 1.2, ease: 'expo.out', stagger: 0.06, delay: 0.1, clearProps: 'transform,opacity' });
+    gsap.from('.dock', { y: -18, opacity: 0, duration: 1.2, ease: 'expo.out', delay: 0.1, clearProps: 'transform,opacity' });
     if (!fine) return;
     // pillars lean toward the pointer (set up on first hover, after their reveal has finished)
     $$('.pillar').forEach(function (el) {
