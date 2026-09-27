@@ -183,7 +183,7 @@ html.anim [data-stagger].in:not(.done) > * { transition: opacity 0.9s var(--soft
 [data-reveal="scale"] { transform: scale(0.94); }
 [data-reveal="scale"].in { transform: none; }
 /* the hero waits for its timeline; a timer in the head lifts this if the scripts never arrive */
-html.js:not(.ready) .hero-title, html.js:not(.ready) .hero-lede, html.js:not(.ready) .hero-ctas, html.js:not(.ready) .hero-facts, html.js:not(.ready) .frame-wrap { visibility: hidden; }
+html.js:not(.ready) .hero-title, html.js:not(.ready) .hero-lede, html.js:not(.ready) .hero-ctas, html.js:not(.ready) .frame-wrap { visibility: hidden; }
 
 /* ---------- hero (Linear: left-aligned 64px title, 15px lede, full-bleed 1320x720 frame) ---------- */
 .hero { position: relative; padding-top: calc(var(--header-h) + 120px); overflow: clip; }
@@ -199,8 +199,6 @@ html.js:not(.ready) .hero-title, html.js:not(.ready) .hero-lede, html.js:not(.re
 .hero-left { display: flex; flex-direction: column; gap: 28px; }
 .hero-lede { max-width: 540px; font-size: 15px; line-height: 1.6; color: var(--muted); }
 .hero-ctas { display: flex; align-items: center; gap: 22px; }
-.hero-facts { font: 400 12px/1.7 var(--mono); letter-spacing: 0.02em; color: var(--faint); text-align: right; }
-.hero-facts span { display: block; }
 
 .frame-wrap { position: relative; margin: 64px auto 0; padding-inline: 60px; max-width: 1440px; }
 .frame {
@@ -343,7 +341,6 @@ html.js:not(.ready) .hero-title, html.js:not(.ready) .hero-lede, html.js:not(.re
 .proof-head { position: relative; max-width: 780px; margin: 0 auto; text-align: center; }
 .proof-head .h2 { font-size: clamp(24px, 3vw, 40px); line-height: 1.1; }
 .proof-head .blue { color: var(--cobalt-3); }
-.proof-head .intro { margin: 22px auto 0; max-width: 660px; font-size: 17px; line-height: 1.5; color: rgba(255, 255, 255, 0.72); }
 .tabs-wrap { position: relative; text-align: center; margin-top: 44px; }
 .tabs { position: relative; display: inline-flex; padding: 4px; border-radius: 100px; border: 1px solid var(--line-2); background: rgba(255, 255, 255, 0.04); max-width: 100%; overflow-x: auto; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
@@ -433,7 +430,6 @@ html.js:not(.ready) .hero-title, html.js:not(.ready) .hero-lede, html.js:not(.re
 .duel-foot { display: flex; align-items: center; gap: 16px; margin-top: 26px; padding: 0 6px; font-size: 15px; line-height: 1.5; color: rgba(255, 255, 255, 0.62); letter-spacing: -0.011em; }
 .duel-foot .link-arrow { margin-left: auto; flex: none; font-size: 13px; color: rgba(255, 255, 255, 0.6); }
 .duel-foot .link-arrow:hover { color: #fff; }
-.proof-note { position: relative; margin: 28px auto 0; text-align: center; font: 400 12px/1.5 var(--mono); color: rgba(255, 255, 255, 0.35); }
 
 /* ---------- control: split heading + a dot-matrix panel with three switches that are really yours ---------- */
 .control { padding-top: var(--gap-sec); }
@@ -459,12 +455,6 @@ html.js:not(.ready) .hero-title, html.js:not(.ready) .hero-lede, html.js:not(.re
 .readout div.bad b { color: #ff8a84; }
 @keyframes readIn { to { opacity: 1; transform: none; } }
 .vault-tag { position: absolute; z-index: 2; top: 20px; right: 24px; font: 500 10.5px/1 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
-.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-top: 64px; }
-.trio > div { position: relative; padding-top: 24px; }
-.trio > div::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--line-2); transform: scaleX(0); transform-origin: left; transition: transform 1.2s var(--e-apple); transition-delay: var(--d, 0s); }
-.trio > div.in::before { transform: scaleX(1); }
-.trio h3 { font-size: 17px; font-weight: 590; letter-spacing: -0.012em; color: var(--fg-2); margin-bottom: 8px; }
-.trio p { font-size: 15px; line-height: 1.55; color: var(--muted); }
 
 /* ---------- film: the recorded product demonstration ---------- */
 .film-sec { padding-top: var(--gap-sec); }
@@ -493,7 +483,6 @@ html.js:not(.ready) .hero-title, html.js:not(.ready) .hero-lede, html.js:not(.re
 .film-end[hidden] { display: none; }
 .film-end-actions { display: flex; gap: 12px; }
 .film-end .btn-ghost { background: transparent; color: var(--fg); border: 1px solid var(--line-3); }
-.film-note { margin-top: 14px; font: 400 12px/1.5 var(--mono); color: var(--faint); }
 
 /* ---------- faq: a deck you drag, swipe or step through ---------- */
 .faq-sec { padding-top: var(--gap-sec); overflow: clip; }
@@ -617,7 +606,6 @@ html:not(.has-swarm) .wordmark { -webkit-text-stroke-color: rgba(255, 255, 255, 
 @media (max-width: 1024px) {
   :root { --gap-sec: 160px; }
   .hero-row { grid-template-columns: 1fr; align-items: start; }
-  .hero-facts { text-align: left; }
   .frame-wrap { padding-inline: 24px; }
   .frame { height: 56vw; }
   .statement .lb { display: none; }
@@ -650,7 +638,6 @@ html:not(.has-swarm) .wordmark { -webkit-text-stroke-color: rgba(255, 255, 255, 
   .stage-num { display: none; }
   .split-head { grid-template-columns: 1fr; align-items: start; gap: 22px; }
   .split-head p { justify-self: start; }
-  .trio { grid-template-columns: 1fr; gap: 36px; }
   .vault { grid-template-columns: 1fr; min-height: 0; }
   .ctls { grid-column: 1; grid-row: auto; padding: 22px 22px 0; }
   .ctl.is-active { transform: none; }
@@ -710,7 +697,6 @@ html:not(.has-swarm) .wordmark { -webkit-text-stroke-color: rgba(255, 255, 255, 
   .hero-left { gap: 26px; }
   .hero-lede { font-size: 14.5px; line-height: 1.6; max-width: 320px; }
   .hero-ctas { flex-wrap: wrap; gap: 18px; }
-  .hero-facts { font-size: 10.5px; line-height: 1.85; }
   .hero-glow { width: 900px; height: 760px; }
   .frame-wrap { padding-inline: var(--pad); margin-top: 44px; }
   /* phones: the interface re-flows into a single 400px column (no rail, no library) on a tall surface;
@@ -773,7 +759,6 @@ html:not(.has-swarm) .wordmark { -webkit-text-stroke-color: rgba(255, 255, 255, 
 
   .proof { padding: 8px; }
   .proof-panel { border-radius: 22px; padding: 64px 14px 34px; }
-  .proof-head .intro { margin-top: 16px; font-size: 14px; max-width: 290px; }
   .tabs-wrap { margin-top: 30px; }
   .tabs { flex-wrap: wrap; justify-content: center; gap: 6px; border: 0; background: none; padding: 0; overflow: visible; }
   .tab { padding: 9px 13px; border: 1px solid var(--line-2); font-size: 10px; }
@@ -800,7 +785,6 @@ html:not(.has-swarm) .wordmark { -webkit-text-stroke-color: rgba(255, 255, 255, 
   .trace-t { font-size: 9px; letter-spacing: 0.06em; }
   .trace-v { font-size: 12.5px; margin-top: 5px; }
   .duel-foot { margin-top: 22px; font-size: 13.5px; }
-  .proof-note { margin-top: 22px; font-size: 10.5px; }
 
   .split-head p, .faq-copy p { font-size: 14.5px; max-width: 320px; }
   .vault { margin-top: 40px; border-radius: 14px; }
@@ -813,10 +797,6 @@ html:not(.has-swarm) .wordmark { -webkit-text-stroke-color: rgba(255, 255, 255, 
   .ctl-txt small { font-size: 12px; }
   .matrix-space { height: 230px; }
   .readout { margin: 0 16px 16px; font-size: 10.5px; min-height: 58px; }
-  .trio { margin-top: 48px; gap: 30px; }
-  .trio > div { padding-top: 18px; }
-  .trio h3 { font-size: 15px; margin-bottom: 6px; }
-  .trio p { font-size: 13.5px; }
 
   .film { margin-top: 36px; }
   .film-screen { border-radius: 10px; }
@@ -824,7 +804,6 @@ html:not(.has-swarm) .wordmark { -webkit-text-stroke-color: rgba(255, 255, 255, 
   .play svg { width: 18px; height: 18px; }
   .film-poster { gap: 14px; }
   .film-dur { display: none; }
-  .film-note { font-size: 10.5px; }
 
   .faq-head { grid-template-columns: 1fr; gap: 0; }
   .faq-head .h2 { margin-top: 14px; }
@@ -879,7 +858,6 @@ html:not(.has-swarm) .wordmark { -webkit-text-stroke-color: rgba(255, 255, 255, 
 
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] { opacity: 1; transform: none; filter: none; transition: none; }
-  .trio > div::before { transform: none; transition: none; }
   .hero-glow, .call::before, .frame-edge, .play-ring, .story-hint svg, .deck-hint svg { animation: none; }
   .dock, .stage-panel, .cite, .sim, .miss li, .bubble-text, .trace-t, .trace-v, .step, .mobile-menu, .mobile-menu a { transition: none; }
   .qa { opacity: 1; transform: none; }

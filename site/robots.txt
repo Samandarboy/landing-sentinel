@@ -3,4 +3,4 @@ Allow: /
 Disallow: /legacy/
 Disallow: /proposals/
 
-Sitemap: https://www.sentinel.law/sitemap.xml
+Sitemap: https://sentinel-lai.com/sitemap.xml

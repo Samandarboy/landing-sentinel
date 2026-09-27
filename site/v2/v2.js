@@ -315,7 +315,7 @@
     function body(tl, at) {
       tl.call(function () { revealText(lede); }, null, at)
         .call(function () { showGroup(ctas); }, null, at + 0.2)
-        .call(function () { run(facts, LINES, { duration: 1.1, stagger: 0.1 }).then(function () { facts.forEach(function (f) { f.style.opacity = 1; }); tidy(facts); }); }, null, at + 0.32)
+        .call(function () { if (!facts.length) return; run(facts, LINES, { duration: 1.1, stagger: 0.1 }).then(function () { facts.forEach(function (f) { f.style.opacity = 1; }); tidy(facts); }); }, null, at + 0.32)
         .call(function () { run(wrap, { opacity: [0, 1], transform: ['translateY(56px)', 'translateY(0px)'] }, { duration: 1.7 }).then(function () { wrap.style.opacity = 1; tidy([wrap]); }); }, null, at + 0.28);
     }
     // The headline is set in type from its first frame: word by word out of a soft blur, like every other heading.

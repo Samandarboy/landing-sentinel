@@ -47,7 +47,7 @@ LANDING = Path(__file__).resolve().parent.parent
 SITE = LANDING / "site"
 CONTENT = LANDING / "content"
 HOME = SITE / "v2" / "index.html"
-BASE = "https://www.sentinel.law"
+BASE = "https://sentinel-lai.com"
 ASSET_V = "20260927"
 
 LEGAL = [
