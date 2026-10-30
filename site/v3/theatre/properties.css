@@ -1,0 +1,12 @@
+@property --ml-n { syntax: "<integer>"; inherits: false; initial-value: 0; }
+@property --ask-a { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@property --wsd-act { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --wsd-done { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --wsd-lit { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --wsd-day { syntax: "<integer>"; inherits: true; initial-value: 0; }
+@property --rds-v { syntax: "<integer>"; inherits: false; initial-value: 0; }
+@property --ovp-col { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --n { syntax: "<integer>"; inherits: false; initial-value: 0; }
+@property --c-beam { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@property --v2p-n { syntax: "<integer>"; inherits: false; initial-value: 0; }
+@property --ob-beam { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
