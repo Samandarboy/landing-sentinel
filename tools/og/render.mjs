@@ -1,4 +1,5 @@
 // Renders og.html to ../../site/og.png (1200x630). Needs `npm i playwright@1.49.1` (Edge via channel 'msedge').
+// Then save it optimised (PIL: optimize=True) so it stays under 300 KB, or WhatsApp may show no preview. When the picture changes, bump ?v= on og:image and twitter:image in site/v3/index.html.
 //   node render.mjs
 import { chromium } from 'playwright';
 import path from 'path';
